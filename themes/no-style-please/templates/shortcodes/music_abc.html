@@ -1,0 +1,26 @@
+{% set id = get_random(end=114514) %}
+{% set paper_id = 'abc-paper-' ~ id %}
+{% set audio_id = 'abc-audio-' ~ id %}
+{% set midi_id = 'abc-midi-' ~ id %}
+{% set activate_id = 'abc-activate-audio-' ~ id %}
+{% set download_id = 'abc-download-audio-' ~ id %}
+<div id="{{ 'music-' ~ id }}" {% if class %}class={{ class }}{% endif %}>
+    <div id="{{ paper_id }}"></div>
+    <div id="{{ audio_id }}"></div>
+    <div id="{{ midi_id }}"></div>
+    {% if audio %}
+    <button id="{{ activate_id }}">Activate Audio</button>
+    {% endif %}
+    {% if midi %}
+    <button id="{{ download_id }}">Download MIDI</button>
+    {% endif %}
+    <script defer>
+        var visualObj = ABCJS.renderAbc("{{ paper_id }}", "{{ abc | addslashes | linebreaksbr | safe | replace(from='<br>', to='\n') | safe }}", {responsive: 'resize', add_classes: true})[0];
+        {% if audio %}
+        document.querySelector("#{{ activate_id }}").addEventListener("click", activateAudio("{{ paper_id }}", "{{ audio_id }}", visualObj));
+        {% endif %}
+        {% if midi %}
+        document.querySelector("#{{ download_id }}").addEventListener("click", downloadAudio("{{ paper_id }}", "{{ midi_id }}", visualObj));
+        {% endif %}
+    </script>
+</div>

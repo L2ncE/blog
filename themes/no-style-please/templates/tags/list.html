@@ -1,0 +1,19 @@
+{% extends "base.html" -%}
+
+{% block header -%}
+<p><a href="{{ current_path }}..">..</a>{{ current_path }}</p>
+{% set map = config.extra.taxonomies_map | filter(attribute="lang", value=lang) | filter(attribute="taxonomy", value=taxonomy.name) | first -%}
+{% if map -%}
+<h1>{{ map.name }}</h1>
+{% else -%}
+<h1>{{ taxonomy.name }}</h1>
+{% endif -%}
+{% endblock header -%}
+
+{% block content -%}
+<p>
+{% for term in terms -%}
+<a href="{{ term.permalink | safe }}">#{{ term.name }}</a>[{{ term.pages | length }}]
+{% endfor -%}
+</p>
+{% endblock content -%}

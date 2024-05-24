@@ -1,0 +1,14 @@
+public
+.DS_Store
+*/.DS_Store
+*.lock
+resume/main.typ
+.vscode
+*.pdf
+**/*.pdf
+.debug/
+vendor/
+**/vendor/
+venv/
+**/venv/
+.idea

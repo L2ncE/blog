@@ -1,0 +1,3 @@
+{% macro emoji_safe(txt) -%}
+    {{ txt | default(value='') | regex_replace(pattern=`(?P<emoji>[\p{Emoji}--\p{Ascii}])`, rep=`<span class="emoji">$emoji</span>`) | safe }}
+{% endmacro emoji_safe -%}

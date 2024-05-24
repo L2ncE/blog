@@ -1,0 +1,31 @@
+{% extends "base.html" -%}
+{% import "macros.html" as macros -%}
+
+{% block header -%}
+<p><a href="{{ current_path }}">..</a>/{{ term.slug }}/</p>
+<h1>{{ term.name }}</h1>
+{% endblock header -%}
+
+{% block content -%}
+{% if paginator -%}
+{% set pages = paginator.pages -%}
+{% else -%}
+{% set pages = term.pages -%}
+{% endif -%}
+<ul>
+{% for page in pages -%}
+    <li>
+        <a href="{{ page.permalink | safe }}">{% if page.date %}{{ page.date }} - {% endif %}{{ macros::emoji_safe(txt=page.title) }}</a>
+        <br />
+        {{ macros::emoji_safe(txt=page.description) }}
+    </li>
+{% endfor -%}
+</ul>
+{% if paginator -%}
+{% set first_hint = config.extra.paginator_hint.first | filter(attribute="lang", value=lang) | first -%}
+{% set previous_hint = config.extra.paginator_hint.previous | filter(attribute="lang", value=lang) | first -%}
+{% set next_hint = config.extra.paginator_hint.next | filter(attribute="lang", value=lang) | first -%}
+{% set last_hint = config.extra.paginator_hint.last | filter(attribute="lang", value=lang) | first -%}
+<p>{% if paginator.previous %}<a href="{{ paginator.first }}">&lt;&lt; {{ first_hint.hint }}</a> <a href="{{ paginator.previous }}">&lt; {{ previous_hint.hint }}</a>{% endif %} [{{ paginator.current_index }}/{{ paginator.number_pagers }}] {% if paginator.next %}<a href="{{ paginator.next }}">{{ next_hint.hint }} &gt;</a> <a href="{{ paginator.last }}">{{ last_hint.hint }} &gt;&gt;</a>{% endif %}</p>
+{% endif -%}
+{% endblock content -%}

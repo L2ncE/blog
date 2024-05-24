@@ -1,0 +1,24 @@
+{% extends "base.html" -%}
+{% import "macros.html" as macros -%}
+
+{% block content -%}
+{{ macros::emoji_safe(txt=section.content) }}
+
+{% if config.extra.recent_pages -%}
+{% set recent_pages = config.extra.recent_pages | filter(attribute="lang", value=lang) | first -%}
+{% set limit = recent_pages.limit | default(value=5) -%}
+{% set section = get_section(path=recent_pages.section) -%}
+<ul>
+    {% for page in section.pages | sort(attribute='date') | reverse | slice(end=limit) -%}
+    <li>
+        <a href="{{ page.permalink | safe }}">{% if page.date %}{{ page.date }} - {% endif %}{{ macros::emoji_safe(txt=page.title) }}</a>
+        <br />
+        {{ macros::emoji_safe(txt=page.description) }}
+    </li>
+    {% endfor -%}
+    <li>
+        <a href="{{ section.permalink }}">...{{ section.title }}</a>
+    </li>
+</ul>
+{% endif -%}
+{% endblock content -%}

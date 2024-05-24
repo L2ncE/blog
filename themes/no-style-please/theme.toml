@@ -1,0 +1,18 @@
+name = "no style, please!"
+description = "A (nearly) no-CSS, fast, minimalist Zola theme"
+license = "MIT"
+homepage = "https://github.com/iGxnon/no-style-please"
+min_version = "0.4.0"
+demo = "https://no-style-please.netlify.com"
+
+[extra]
+
+# The theme author info: you!
+[author]
+name = "iGxnon"
+homepage = "https://blog.skygard.work"
+
+[original]
+name = "Ahmed Alaa"
+homepage = "https://4b.cx"
+repo = "https://gitlab.com/4bcx/no-style-please"

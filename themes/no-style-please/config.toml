@@ -1,0 +1,84 @@
+base_url = "https://no-style-please.netlify.app/"
+title = "no style, please!"
+description = "A (nearly) no-CSS, fast, minimalist Zola theme."
+compile_sass = true
+generate_feed = true
+default_language = "en"
+taxonomies = [{ name = "tags" }, { name = "categories" }]
+
+[markdown]
+highlight_code = true
+
+[languages.zh]
+title = "无需样式!"
+generate_feed = true
+taxonomies = [{ name = "tags" }, { name = "categories" }]
+
+
+[extra]
+author = "Ahmed Alaa"
+logo = "images/logo.png"
+header_nav = [
+    { lang = "en", name = "home", path = "/" },
+    { lang = "zh", name = "主页", path = "/zh" },
+
+    { lang = "en", name = "archived", path = "/posts" },
+    { lang = "zh", name = "归档", path = "/zh/posts" },
+
+    { lang = "en", name = "tags", path = "/tags" },
+    { lang = "zh", name = "标签", path = "/zh/tags" },
+
+    { lang = "en", name = "categories", path = "/categories" },
+    { lang = "zh", name = "分类", path = "/zh/categories" },
+
+    { lang = "en", name = "about", path = "/about" },
+    { lang = "zh", name = "关于", path = "/zh/about" },
+
+    { lang = "en", name = "discord", url = "https://discord.com", new_tab = true },
+    { lang = "zh", name = "discord", url = "https://discord.com", new_tab = true },
+
+    { lang = "en", name = "> 简体中文", path = "/zh" },
+    { lang = "zh", name = "> English", path = "/" },
+]
+# footer navigation does not support multiple languages, some global infomation putted here might be better
+footer_nav = [
+    { name = "Github", url = "https://www.github.com" },
+    { name = "Twitter", url = "https://www.twitter.com" },
+    { name = "Linkedin", url = "https://www.linkedin.com" },
+]
+recent_pages = [
+    { lang = "en", section = "posts/_index.md", limit = 5 },
+    { lang = "zh", section = "posts/_index.zh.md", limit = 5 },
+]
+# mapping taxonomies, taxonomies are shared by every language but the name does not
+taxonomies_map = [
+    { lang = "zh", taxonomy = "tags", name = "标签" },
+    { lang = "zh", taxonomy = "categories", name = "分类" },
+]
+paginator_hint.first = [
+    { lang = "zh", hint = "开头" },
+    { lang = "en", hint = "First" },
+]
+paginator_hint.previous = [
+    { lang = "zh", hint = "前一页" },
+    { lang = "en", hint = "Pervious" },
+]
+paginator_hint.next = [
+    { lang = "zh", hint = "下一页" },
+    { lang = "en", hint = "Next" },
+]
+paginator_hint.last = [
+    { lang = "zh", hint = "结尾" },
+    { lang = "en", hint = "Last" },
+]
+
+[extra.giscus]
+enable = false
+data_repo = ""
+data_repo_id = ""
+data_category = "Announcements"
+data_category_id = ""
+data_input_position = "bottom"
+data_theme = "preferred_color_scheme"
+data_loading = "lazy"
+lang_map = [{ lang = "zh", to = "zh-CN" }]
