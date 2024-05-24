@@ -59,8 +59,8 @@ paginator_hint.last = [
 
 [extra.giscus]
 enable = true
-data_repo = "iGxnon/blog"
-data_repo_id = "R_kgDOJdd9lw"
+data_repo = "L2ncE/blog"
+data_repo_id = "R_kgDOL_-6Vw"
 data_category = "Announcements"
-data_category_id = "DIC_kwDOJdd9l84CbO42"
+data_category_id = "DIC_kwDOL_-6V84CflHl"
 lang_map = [{ lang = "zh", to = "zh-CN" }]
