@@ -6,8 +6,6 @@ Gallery: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
 Wiki: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
-Resume: [cv.pdf](https://lanlance.cn/cv.pdf)
-
 ## Personal Interest
 - 专注于 Infra-Dev & Biz-Dev 能够带给我快乐与内心的平静
 - 正在学习 Java 和 DDIA，Keep Learning
