@@ -33,9 +33,11 @@ header_nav = [
     { lang = "en", name = "about", path = "/about" },
 ]
 footer_nav = [
-    { name = "RSS", url = "/zh/atom.xml" },
+    { name = "RSS", url = "/atom.xml" },
     { name = "Github", url = "https://github.com/L2ncE" },
     { name = "Twitter", url = "https://twitter.com/LanLance24" },
+    { name = "dev.to", url = "https://dev.to/llance_24" },
+    { name = "稀土掘金", url = "https://juejin.cn/user/2837173444548711" },
 ]
 recent_pages = [
     { lang = "en", section = "posts/_index.md", limit = 7 },
