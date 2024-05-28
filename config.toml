@@ -33,7 +33,7 @@ header_nav = [
     { lang = "en", name = "about", path = "/about" },
 ]
 footer_nav = [
-    { name = "RSS", url = "/atom.xml" },
+    { name = "RSS", url = "./atom.xml" },
     { name = "Github", url = "https://github.com/L2ncE" },
     { name = "Twitter", url = "https://twitter.com/LanLance24" },
     { name = "dev.to", url = "https://dev.to/llance_24" },
