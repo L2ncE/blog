@@ -59,13 +59,3 @@ title: About
 - 美团 —— 到家 TSP 后端开发实习生 24.5 ~ 至今
 
 > 希望能学点新东西
-
-## 在哪里找到我
-
-CSDN https://blog.csdn.net/Lance_Yuan24
-
-稀土掘金 https://juejin.cn/user/2837173444548711
-
-GitHub https://github.com/L2ncE
-
-dev.to https://dev.to/llance_24
