@@ -2,11 +2,11 @@
 description: "LanLane's blog index page"
 ---
 
->Notice: 前几年刚接触计算机时写了非常多的水文，在秋招结束后会尝试将这些文章精炼整合。
-
 Gallery: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
 Wiki: [gists.lanlance.cn](https://gists.lanlance.cn/)
+
+>Notice: 前几年刚接触计算机时写了非常多的水文，在秋招结束后会尝试将这些文章精炼整合。
 
 ## Personal Interest
 - 🎵:法坎泰 🏎:VER ⚽:FCB
