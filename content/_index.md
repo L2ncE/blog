@@ -2,14 +2,11 @@
 description: "LanLane's blog index page"
 ---
 
+>Notice: 前几年刚接触计算机时写了非常多的水文，在秋招结束后会尝试将这些文章精炼整合。
+
 Gallery: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
 Wiki: [gists.lanlance.cn](https://gists.lanlance.cn/)
-
-Notice: 前几年刚接触计算机时写了非常多的水文，在秋招结束后会尝试将这些文章精炼整合。
-
-系统性文章：
-- [程序静态分析指北](https://gists.lanlance.cn/cssys/static-analysis)
 
 ## Personal Interest
 - 🎵:法坎泰 🏎:VER ⚽:FCB
@@ -19,4 +16,8 @@ Notice: 前几年刚接触计算机时写了非常多的水文，在秋招结束
 重庆邮电大学计算机科学与技术专业21级本科生。之前于太极图形 Meshy 团队、字节跳动 DCar 团队、字节跳动 Lark Core 团队和美团 TSP 营销中心实习。
 
 在开源社区中是字节跳动开源中间件团队 CloudWeGo 的 Member 与其开源框架 Hertz 的 Committer、2023年 GLCC Dubbo-Go 项目中选者，同时也是 CloudWeGo 二周年的社区年度贡献者（Top1）。
+## 系统性文章
+
+- [程序静态分析指北](https://gists.lanlance.cn/cssys/static-analysis)
+
 ## Recent Posts
