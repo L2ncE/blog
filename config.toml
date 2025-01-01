@@ -33,7 +33,6 @@ header_nav = [
     { lang = "en", name = "about", path = "/about" },
 ]
 footer_nav = [
-    { name = "蜀ICP备2022002809号-3", url = "https://beian.miit.gov.cn/"},
     { name = "RSS", url = "./atom.xml" },
     { name = "Github", url = "https://github.com/L2ncE" },
     { name = "Twitter", url = "https://twitter.com/LanLance24" },
