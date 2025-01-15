@@ -6,8 +6,6 @@ Gallery: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
 Wiki: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
->Notice: 前几年刚接触计算机时写了非常多的水文，在秋招结束后会尝试将这些文章精炼整合。
-
 ## Personal Interest
 - 🎵:法坎泰 🏎:VER ⚽:FCB
 - 正在学习 NJU《软件分析》和精读 DDIA，Keep Learning
@@ -23,6 +21,6 @@ Wiki: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
 ## 系统性文章
 
-- [程序静态分析指北](https://gists.lanlance.cn/cssys/static-analysis)
+- [程序数据流静态分析指北](https://gists.lanlance.cn/cssys/static-analysis)
 
 ## Recent Posts
