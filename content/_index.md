@@ -2,7 +2,7 @@
 description: "LanLane's blog index page"
 ---
 
-公众号：LanTech指南
+公众号：[LanTech指南](https://raw.githubusercontent.com/L2ncE/images/main/PicGo/qrcode_for_gh_8805cf7b8d90_258.jpg)
 
 Gallery: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
