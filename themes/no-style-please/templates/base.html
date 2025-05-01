@@ -85,6 +85,12 @@
                 "@context":"https://schema.org"
             }
         </script>
+
+        {% if config.extra.adsense.enable %}
+        <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client={{ config.extra.adsense.client_id }}"
+                crossorigin="anonymous"></script>
+        {% endif %}
+
         {% endblock meta -%}
         {% if config.generate_feed -%}
         {% block feed -%}

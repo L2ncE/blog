@@ -67,4 +67,6 @@ data_category = "Announcements"
 data_category_id = "DIC_kwDOL_-6V84CflHl"
 lang_map = [{ lang = "zh", to = "zh-CN" }]
 
-
+[extra.adsense]
+enable = true
+client_id = "ca-pub-1786699111245750"
