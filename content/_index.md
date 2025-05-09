@@ -2,27 +2,28 @@
 description: "LanLane's blog index page"
 ---
 
-公众号：[LanTech指南](https://raw.githubusercontent.com/L2ncE/images/main/PicGo/qrcode_for_gh_8805cf7b8d90_258.jpg)
+👏🏻 欢迎关注公众号：[LanTech指南](https://raw.githubusercontent.com/L2ncE/images/main/PicGo/qrcode_for_gh_8805cf7b8d90_258.jpg)
 
-Gallery: [photo.lanlance.cn](https://photo.lanlance.cn/)
+📸 我拍的照: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
-Wiki: [gists.lanlance.cn](https://gists.lanlance.cn/)
+📚 知识碎片: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
 ## Personal Interest
-- 🎵:法坎泰 🏎:VER ⚽:FCB
-- 正在学习JVM和精读 DDIA，Keep Learning
-- ACG & 单机游戏爱好者，可以在奇怪的地方找到我的 Steam 与 bangumi 主页
+- Ye🔥 & Tyler🎵
+- 🎾 & 🏊🏻 & 🏃🏻‍& ⚽️  
+- ACG & Console Gamer
 ## My Story
-重邮计科21级本科生，美团交易系统平台部营销中心后端研发工程师。之前于[Meshy AI](https://www.meshy.ai/)、[懂车帝](https://www.dongchedi.com/)二手车、[飞书](https://www.feishu.cn/) IM Core/AI Arc 实习。
+👨🏻‍🎨 Biz R&D at [Meituan](https://www.meituan.com/) TSP(Transaction System Platform). I used to be an R&D intern at [DCar](https://www.dongchedi.com/), [Lark](https://www.larksuite.com/) IM Core/AI Arc, and [Meshy](https://www.meshy.ai).
 
-开源社区中是字节跳动开源中间件团队 CloudWeGo 的 Member 与其开源框架 Hertz 的 Committer、2023年 GLCC Dubbo-Go 项目中选者，同时也是 CloudWeGo 二周年的社区年度贡献者（Top1）。
-## 技术分享
+☁️ Member of [CloudWeGo](https://www.cloudwego.io/), the committer of [Hertz](https://github.com/cloudwego/hertz), the selected candidate of the [GLCC](https://www.gitlink.org.cn/glcc/projects) Dubbo-Go project in 2023, and the annual-contributor of the second anniversary of CloudWeGo.
+## 🤖 Technology Sharing
 
 - [[CSG]快速掌握适合自己业务的 Hertz 中间件](https://meetings.feishu.cn/s/1j1gs6udypv5w?src_type=3)
 - [CloudWeGo 二周年分享 —— 我与开源(2:48:50)](https://juejin.cn/live/cloudwegoyear2)
 
-## 系统性文章
+## 📚 Systematic Article
 
-- [程序数据流静态分析指北](https://gists.lanlance.cn/cssys/static-analysis)
+- [程序数据流静态分析指北](https://gists.lanlance.cn/cssys/data-flow-analysis)
+- [ElasticSearch 101](https://gists.lanlance.cn/cssys/es-101)
 
 ## Recent Posts
