@@ -9,7 +9,7 @@ description: "LanLane's blog index page"
 📚 知识碎片: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
 ## Personal Interest
-- Ye🔥 & Tyler🎵
+- Ye & Tyler
 - 🎾 & 🏊 & 🏃‍& ⚽️  
 - ACG & Console Gamer
 ## My Story
