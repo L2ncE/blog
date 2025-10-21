@@ -9,11 +9,12 @@ description: "LanLane's blog index page"
 📚 知识碎片: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
 ## Personal Interest
-- 🎵Ye & Tyler🎵
+- 🎵Ye & Tyler🎵（看过两次 Ye 和一次 Tyler 的现场）
 - 🎾 & 🏊 & 🏃 & ⚽️ & 🏎️
 - ACG & Console Gamer
+- Traveler => 🌏
 ## My Story
-🎨 Biz R&D at [Meituan](https://www.meituan.com/) TSP(Transaction System Platform). I used to be an R&D intern at [DCar](https://www.dongchedi.com/), [Lark](https://www.larksuite.com/) IM Core/AI Arc, and [Meshy](https://www.meshy.ai).
+🎨 Biz R&D at [Meituan](https://www.meituan.com/) TSP(Transaction System Platform). I used to be an R&D intern at [ByteDance](https://bytedance.com/) and [Meshy](https://www.meshy.ai).
 
 ☁️ Member of [CloudWeGo](https://www.cloudwego.io/), the committer of [Hertz](https://github.com/cloudwego/hertz), the selected candidate of the [GLCC](https://www.gitlink.org.cn/glcc/projects) Dubbo-Go project in 2023, and the annual-contributor of the second anniversary of CloudWeGo.
 ## Technology Sharing
