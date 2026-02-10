@@ -55,7 +55,7 @@ Zstd 在压缩率上完胜 LZ4，在解压速度上完胜 Gzip，达到了 Paret
 
 **整体流程**
 
-![](pictures/Fory%20(1).png)
+![](https://raw.githubusercontent.com/L2ncE/images/main/PicGoFory%20(1).png)
 
 **Fory 实例复用**
 
