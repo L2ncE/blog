@@ -1,0 +1,14 @@
+name = "no-style-please"
+description = "A nearly no-css Zola theme"
+license = "MIT"
+homepage = "https://github.com/L2ncE/no-style-please"
+min_version = "0.4.0"
+
+[author]
+name = "LancLance"
+homepage = "https://lanlance.cn"
+
+[original]
+name = "Ahmed Alaa"
+homepage = "https://4b.cx"
+repo = "https://gitlab.com/4bcx/no-style-please"
