@@ -7,11 +7,12 @@ default_language = "en"
 # The theme to use
 theme = "no-style-please"
 # Whether to automatically compile all Sass files in the sass directory
-compile_sass = false
+compile_sass = true
 # Whether to build a search index to be used later on by a JavaScript library
 build_search_index = true
 taxonomies = [{ name = "tags" }, { name = "categories" }]
 generate_feed = true
+feed_filename = "atom.xml"
 
 [markdown]
 # Whether to do syntax highlighting
@@ -50,7 +51,7 @@ paginator_hint.first = [
     { lang = "en", hint = "First" },
 ]
 paginator_hint.previous = [
-    { lang = "en", hint = "Pervious" },
+    { lang = "en", hint = "Previous" },
 ]
 paginator_hint.next = [
     { lang = "en", hint = "Next" },

@@ -116,3 +116,35 @@ img {
 }
 
 nav, .taxonomies { text-align: center; }
+
+// Theme toggle button
+.footer-content {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+}
+
+.theme-toggle {
+  background: none;
+  border: 1px solid black;
+  border-radius: 4px;
+  padding: 0.3rem 0.6rem;
+  cursor: pointer;
+  font-size: 1.2rem;
+  transition: all 0.2s ease;
+
+  &:hover {
+    background: black;
+    color: white;
+  }
+}
+
+body[theme="dark"] .theme-toggle {
+  border-color: white;
+
+  &:hover {
+    background: white;
+    color: black;
+  }
+}
