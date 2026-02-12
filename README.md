@@ -1,6 +1,8 @@
 # LanLance's Blog
 
-## 目录结构
+Deployed on Cloudflare Pages
+
+## Infra
 
 ```
 blog/
@@ -15,9 +17,7 @@ blog/
 └── templates/           # 自定义模板（可选）
 ```
 
-## 使用方法
-
-### 本地预览
+## Usage
 
 ```bash
 zola serve
@@ -25,4 +25,4 @@ zola serve
 
 ## License
 
-MIT
+No License
