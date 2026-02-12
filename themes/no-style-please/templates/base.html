@@ -133,6 +133,9 @@
         {% block head %}{% endblock head %}
     </head>
     <body theme="auto">
+        <button onclick="toggleTheme()" class="theme-toggle" title="Toggle theme">
+            <span class="theme-icon">&#9790;</span>
+        </button>
         <div class="w">
             <header>
                 {% if config.extra.header_nav -%}
@@ -155,9 +158,6 @@
             <footer>
                 {% block footer %}{% endblock footer %}
                 <div class="footer-content">
-                    <button onclick="toggleTheme()" class="theme-toggle" title="Toggle theme">
-                        <span class="theme-icon">&#9790;</span>
-                    </button>
                     {% if config.extra.footer_nav -%}
                     <nav>
                         {% for nav_item in config.extra.footer_nav -%}
