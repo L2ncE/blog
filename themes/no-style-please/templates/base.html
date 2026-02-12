@@ -101,41 +101,9 @@
         <link rel="stylesheet" href="https://overpass-30e2.kxcdn.com/overpass.css"/>
         <link rel="stylesheet" href="{{ get_url(path='style.css', trailing_slash=false) | safe }}"/>
         {% endblock css -%}
-        <script>
-            function toggleTheme() {
-                const body = document.body;
-                const currentTheme = body.getAttribute('theme');
-                if (currentTheme === 'dark') {
-                    body.setAttribute('theme', 'light');
-                    localStorage.setItem('theme', 'light');
-                } else if (currentTheme === 'light') {
-                    body.setAttribute('theme', 'dark');
-                    localStorage.setItem('theme', 'dark');
-                } else {
-                    // auto -> check system preference
-                    if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-                        body.setAttribute('theme', 'light');
-                        localStorage.setItem('theme', 'light');
-                    } else {
-                        body.setAttribute('theme', 'dark');
-                        localStorage.setItem('theme', 'dark');
-                    }
-                }
-            }
-            // Load saved theme on page load
-            (function() {
-                const savedTheme = localStorage.getItem('theme');
-                if (savedTheme) {
-                    document.body.setAttribute('theme', savedTheme);
-                }
-            })();
-        </script>
         {% block head %}{% endblock head %}
     </head>
-    <body theme="auto">
-        <button onclick="toggleTheme()" class="theme-toggle" title="Toggle theme">
-            <span class="theme-icon">&#9790;</span>
-        </button>
+    <body>
         <div class="w">
             <header>
                 {% if config.extra.header_nav -%}
