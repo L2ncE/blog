@@ -8,10 +8,11 @@ description: "LanLane's blog index page"
 
 📚 知识碎片: [gists.lanlance.cn](https://gists.lanlance.cn/)
 
-## Personal Interest
-- 🎵Ye & Tyler🎵（看过两次 Ye 和一次 Tyler 的现场）
-- 🎾 & 🏊 & 🏃 & ⚽️ & 🏎️
-- Traveler => 🌏
+## Facts
+
+- 🎵 看过 Ye（两次海口）、Tyler（首尔）、Ed Sheeran（杭州）、XG（成都）的演唱会
+- 🏎️ 去过两次 F1 上海大奖赛现场
+- 🌏 旅行过中国所有的省份 & 四个国家（🇨🇳🇹🇭🇯🇵🇰🇷）
 
 ## Sharing
 
