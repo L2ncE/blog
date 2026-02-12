@@ -4,6 +4,8 @@ date: 2026-02-10
 taxonomies:
   categories: ["Java", "性能优化"]
   tags: ["Java", "高并发", "缓存", "性能优化"]
+extra:
+  katex: true
 ---
 
 C 端场景下分布式 KV 存储（如 Redis、Tair）随着业务逻辑的日益复杂、对象体积不断膨胀，大 Value 问题成为系统顽疾之一，危害系统稳定性与接口性能。
@@ -103,3 +105,9 @@ public static byte[] serializeAndCompress(Object object) {
 ## 优化效果
 
 某核心营销页面（脱敏）正常召回 TP90 59.4ms，使用缓存召回 TP90 1.6ms，同时午高峰该页面缓存命中率 80% 左右。且在 10 万 QPS 的入口流量下 TP90 能够保证 2ms 以内，Value 大小均小于 100Kb。
+
+性能提升计算：
+
+$$\text{性能提升} = \frac{59.4 - 1.6}{59.4} \times 100\% \approx 97.3\%$$
+
+即通过 Fory + Zstd 缓存方案，接口响应时间降低了约 **97%**。

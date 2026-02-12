@@ -11,9 +11,6 @@
 
     &.invertable { filter: invert(0); }
   }
-  .abcjs-cursor, abcjs-highlight {
-    filter: invert(1);
-  }
   .emoji {
     filter: invert(1);
   }

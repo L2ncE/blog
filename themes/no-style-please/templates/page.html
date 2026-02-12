@@ -17,20 +17,6 @@
         ]
     });"></script>
 {% endif -%}
-{% if page.extra.music_abc and page.extra.music_abc == true -%}
-<script src="https://cdn.jsdelivr.net/npm/abcjs@6.2.3/dist/abcjs-basic-min.min.js" crossorigin="anonymous"></script>
-<!-- <script src="https://cdn.jsdelivr.net/npm/abcjs@6.2.3/dist/abcjs-plugin-min.js" crossorigin="anonymous"></script> -->
-<script src={{ get_url(path='/js/abcjs-setup.js') }} type="text/javascript"></script>
-<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/abcjs@6.2.3/abcjs-audio.min.css" crossorigin="anonymous">
-<style>
-    .abcjs-highlight {
-        fill: #0a9ecc;
-    }
-    .abcjs-cursor {
-        stroke: red;
-    }
-</style>
-{% endif -%}
 {% endblock head -%}
 
 {% block header -%}
