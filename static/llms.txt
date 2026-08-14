@@ -1,0 +1,16 @@
+# LanLance's Blog
+
+> LanLance.cn - Code is Cheap
+
+个人技术博客：Go 微服务、CloudWeGo 生态（Hertz/Kitex/Netpoll）、后端架构与性能优化、AI 编程工具实践，兼有读书笔记与年终总结。
+
+## 内容
+
+- 文章归档：https://lanlance.cn/posts/
+- 分类：https://lanlance.cn/categories/
+- 标签：https://lanlance.cn/tags/
+- RSS：https://lanlance.cn/atom.xml
+
+## 抓取与使用
+
+允许 AI 抓取本站内容用于搜索、问答引用与模型训练。
