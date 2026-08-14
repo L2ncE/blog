@@ -100,7 +100,7 @@ make start
 ![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47a0b85aaf.png)
 
 
-关于配置中心的详细配置，[详见](https://github.com/CyanAsterisk/FreeCar/blob/dev/static/docs/NACOS_CONFIG.md)。
+关于配置中心的详细配置，详见。
 
 ### 生成数据表
 
@@ -138,7 +138,7 @@ make trip
 
 ## API 请求
 
-项目的 API 请求示例[详见](https://github.com/CyanAsterisk/FreeCar/blob/dev/static/docs/API_REQUEST.md)。
+项目的 API 请求示例详见。
 
 ## 开发指南
 
@@ -151,7 +151,7 @@ make trip
 ### IDL
 
 在开发之前我们需要定义好 IDL 文件，其中 hz
-为开发者提供了许多定制化的 [api 注解](https://www.cloudwego.io/zh/docs/hertz/tutorials/toolkit/toolkit/#%E6%94%AF%E6%8C%81%E7%9A%84-api-%E6%B3%A8%E8%A7%A3)。
+为开发者提供了许多定制化的 api 注解。
 
 示例代码：
 

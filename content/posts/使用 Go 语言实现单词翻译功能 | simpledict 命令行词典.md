@@ -112,7 +112,7 @@ var data = bytes.NewReader(buf)
 
 ![image.png](https://picture.lanlance.cn/i/2023/08/10/64d477b08b49a.png)
 
-复制完之后我们可以使用一个[在线转换工具](https://oktools.net/json2go)进行转换，并在其中选择嵌套转换。
+复制完之后我们可以使用一个在线转换工具进行转换，并在其中选择嵌套转换。
 
 ![image.png](https://picture.lanlance.cn/i/2023/08/10/64d477c1dbec6.png)
 
