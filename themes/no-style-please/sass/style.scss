@@ -24,6 +24,9 @@
 // bg color is also needed in html in order to
 // block body's background propagation
 // see: https://stackoverflow.com/a/61265706
+// 注意：本文件编译后的 CSS 已内联到 templates/base.html 的 <style> 块中。
+// 修改样式后需重新 build，把 public/style.css 的内容同步到 base.html。
+
 html, body { background: white; }
 
 html { height: 100%; }

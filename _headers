@@ -1,8 +1,6 @@
-/style.css
-  Cache-Control: public, max-age=31536000, immutable
-
 /atom.xml
   Cache-Control: public, max-age=3600
 
 /images/*
   Cache-Control: public, max-age=31536000, immutable
+
