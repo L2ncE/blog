@@ -1,5 +1,6 @@
 ---
 title: 负载均衡拓展从 0 到 1 —— Hertz 负载均衡实现
+description: 从零讲解如何在 Hertz 服务发现中配置与实现负载均衡，实现服务高可用与流量均衡。
 date: 2022-12-20
 taxonomies:
   categories: ["Golang", "CloudWeGo"]

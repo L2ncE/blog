@@ -1,5 +1,6 @@
 ---
 title: C 端高并发下的 KV 存储优化
+description: 针对分布式 KV 的大 Value 顽疾，介绍基于 Fory 序列化与 Zstd 压缩的组合方案及其设计考量。
 date: 2026-02-10
 taxonomies:
   categories: ["Java", "性能优化"]

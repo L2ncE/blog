@@ -1,5 +1,6 @@
 ---
 title: 再也不用花时间在找封面上了！—— 基于 Go 实现的文章封面生成器
+description: 介绍一个用 Go 实现的文章封面自动生成器，解决写文章时封面选择的烦恼。
 date: 2022-12-22
 taxonomies:
   categories: ["Golang"]

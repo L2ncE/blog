@@ -1,5 +1,6 @@
 ---
 title: Go 语言实现 GitHub 第三方登录（基于 Gin 框架实现)
+description: 讲解 OAuth2.0 授权流程，并基于 Gin 框架使用 GitHub 接口实现第三方登录。
 date: 2022-03-13
 taxonomies:
   categories: ["Golang"]

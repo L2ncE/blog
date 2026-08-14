@@ -1,5 +1,6 @@
 ---
 title: 如何实现一个优雅的服务发现拓展 | Hertz 源码解读
+description: 深入解读 Hertz 框架服务发现部分的设计与实现，以及如何优雅地实现服务发现拓展。
 date: 2022-11-12
 taxonomies:
   categories: ["Golang", "CloudWeGo"]

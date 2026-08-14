@@ -1,5 +1,6 @@
 ---
 title: Sentry 101 | 从部署到实战
+description: 深入解析 Sentry 错误追踪系统的自托管部署，以及在实际项目中的错误追踪与性能监控实践。
 date: 2023-08-11
 taxonomies:
   categories: ["DevOps"]

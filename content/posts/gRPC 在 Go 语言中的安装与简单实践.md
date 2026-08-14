@@ -1,5 +1,6 @@
 ---
 title: gRPC 在 Go 语言中的安装与简单实践
+description: 讲解 RPC 与 gRPC 的基本概念，并记录 gRPC 在 Go 中的安装与简单实践。
 date: 2022-03-12
 taxonomies:
   categories: ["Golang"]

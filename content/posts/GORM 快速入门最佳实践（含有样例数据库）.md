@@ -1,5 +1,6 @@
 ---
 title: GORM 快速入门最佳实践（含有样例数据库）
+description: 以选课系统为样例数据库，讲解 GORM 的基础使用与常见最佳实践。
 date: 2022-04-24
 taxonomies:
   categories: ["Golang"]
