@@ -3,15 +3,21 @@ base_url = "https://lanlance.cn"
 title = "LanLance's Blog"
 description = "LanLance.cn - Code is Cheap"
 # Language code for this site
-default_language = "en"
+default_language = "zh"
 # The theme to use
 theme = "no-style-please"
+# The default author for pages
+author = "LanLance"
 taxonomies = [{ name = "tags" }, { name = "categories" }]
 generate_feeds = true
 feed_filenames = ["atom.xml"]
+# When set to "true", the generated HTML files are minified
+minify_html = true
 
 [markdown]
 render_emoji = true
+# When set to "true", lazy-loading and async decoding are set on all images
+lazy_async_image = true
 
 [markdown.highlighting]
 theme = "github-light"
@@ -19,15 +25,14 @@ theme = "github-light"
 
 [extra]
 # Put all your custom variables here
-author = "L2ncE"
 logo = "images/logo.png"
 header_nav = [
-    { lang = "en", name = "home", path = "/" },
-    { lang = "en", name = "archived", path = "/posts" },
-    { lang = "en", name = "tags", path = "/tags" },
-    { lang = "en", name = "categories", path = "/categories" },
-    { lang = "en", name = "friends", path = "/friends" },
-    { lang = "en", name = "about", path = "/about" },
+    { lang = "zh", name = "home", path = "/" },
+    { lang = "zh", name = "archived", path = "/posts" },
+    { lang = "zh", name = "tags", path = "/tags" },
+    { lang = "zh", name = "categories", path = "/categories" },
+    { lang = "zh", name = "friends", path = "/friends" },
+    { lang = "zh", name = "about", path = "/about" },
 ]
 footer_nav = [
     { name = "RSS", url = "/atom.xml" },
@@ -37,23 +42,23 @@ footer_nav = [
     { name = "Juejin", url = "https://juejin.cn/user/2837173444548711" },
 ]
 recent_pages = [
-    { lang = "en", section = "posts/_index.md", limit = 7 },
+    { lang = "zh", section = "posts/_index.md", limit = 7 },
 ]
 taxonomies_map = [
-    { lang = "en", taxonomy = "tags", name = "tags"},
-    { lang = "en", taxonomy = "categories", name = "categories"},
+    { lang = "zh", taxonomy = "tags", name = "tags"},
+    { lang = "zh", taxonomy = "categories", name = "categories"},
 ]
 paginator_hint.first = [
-    { lang = "en", hint = "First" },
+    { lang = "zh", hint = "First" },
 ]
 paginator_hint.previous = [
-    { lang = "en", hint = "Previous" },
+    { lang = "zh", hint = "Previous" },
 ]
 paginator_hint.next = [
-    { lang = "en", hint = "Next" },
+    { lang = "zh", hint = "Next" },
 ]
 paginator_hint.last = [
-    { lang = "en", hint = "Last" },
+    { lang = "zh", hint = "Last" },
 ]
 
 [extra.giscus]
@@ -63,7 +68,3 @@ data_repo_id = "R_kgDOL_-6Vw"
 data_category = "Announcements"
 data_category_id = "DIC_kwDOL_-6V84CflHl"
 lang_map = [{ lang = "zh", to = "zh-CN" }]
-
-[extra.adsense]
-enable = true
-client_id = "ca-pub-1786699111245750"
