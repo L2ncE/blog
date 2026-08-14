@@ -1,5 +1,5 @@
 ---
-title: 原来防御 CSRF 攻击这么简单？ —— Hertz CSRF 中间件实战
+title: Go HTTP 框架之 Hertz —— 通过 reverseproxy 进行反向代理实战
 description: 介绍 Hertz 中 reverseproxy 拓展的用法，通过反向代理场景演示基础转发与服务发现集成。
 date: 2022-11-25
 taxonomies:
