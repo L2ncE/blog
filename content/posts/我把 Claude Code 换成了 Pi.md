@@ -6,8 +6,6 @@ taxonomies:
   tags: ["杂谈", "AI", "Agent", "Pi", "Claude Code"]
 ---
 
-# 我把 Claude Code 换成了 Pi
-
 Databricks 拿自己几百万行的代码库实测了一批 Coding Agent，在同一个模型、同样的 thinking 档位下，变量只有 Harness，结果产物质量基本持平，任务成本能差出 2 倍以上。Pi 每轮喂给模型的上下文，只有其他 Harness 的三分之一左右。
 
 换完之后我就一直高强度用 Pi 到现在，中途一次都没用回 Claude Code。
