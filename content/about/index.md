@@ -8,7 +8,7 @@ title: About
 
 - [CloudWeGo](https://www.cloudwego.io/) 二周年年度贡献者（社区贡献者No.1）
 - [Dubbo-Go](https://dubbo.apache.org/en/) GLCC 项目贡献者
-- [TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory/) 开源贡献者
+- [TencentDB-Agent-Memory](https://github.com/TencentCloud/TencentDB-Agent-Memory/) 受邀核心 Reviewer（Triage Collaborator）
 
 ## 工作经历
 
