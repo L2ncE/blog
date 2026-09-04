@@ -1,6 +1,6 @@
 ---
 title: Go 语言爬虫最佳实践 | 通过正则表达式实现爬虫
-description: 介绍网络爬虫的基本概念，并以 Go 语言和正则表达式为例实现一个从抓取到解析的爬虫。
+description: 从爬虫和正则表达式的基本概念讲起，以百度贴吧为例，从单页爬取一路写到并发版。
 date: 2022-02-10
 taxonomies:
   categories: ["Golang"]

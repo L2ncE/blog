@@ -1,6 +1,6 @@
 ---
 title: 读懂 Warp 的 Agent Skill 自进化机制
-description: Warp 用两个 Skill 搭起自进化循环，人类反馈持续累积，Improver 定期把反馈编译回 Skill 文件。读 Anthropic 这篇博客，看懂 Skill、Memory、Harness 三层约束各自的边界。
+description: Warp 用两个 Skill 搭起自进化循环，人类反馈由 Improver 定期编译回 Skill 文件，Skill、Memory、Harness 各守一层约束。
 date: 2026-08-28
 taxonomies:
   categories: ["AI"]

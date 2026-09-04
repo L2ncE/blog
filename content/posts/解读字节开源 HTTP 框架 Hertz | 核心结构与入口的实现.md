@@ -1,6 +1,6 @@
 ---
 title: 解读字节开源 HTTP 框架 Hertz | 核心结构与入口的实现
-description: 从源码角度解读字节开源 HTTP 框架 Hertz 的核心结构与入口实现，学习企业级框架的设计思路。
+description: 边造自己的框架边读 Hertz 源码，从核心结构与入口实现入手，学企业级框架的设计思路。
 date: 2022-08-02
 taxonomies:
   categories: ["Golang", "CloudWeGo"]
