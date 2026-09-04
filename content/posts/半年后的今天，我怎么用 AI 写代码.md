@@ -45,8 +45,6 @@ Anthropic 最近发了一篇博客讲上下文工程的新规则，里面明确�
 
 三是 subagent 加 worktree。并发跑多个任务时用 git worktree 做隔离，各改各的避免冲突，worktree 是 git 的通用概念，哪个 Harness 都能用；在 Claude Code 和 Codex 里 subagent 是原生的。而 Pi 秉持 Less is More 的思路，原生并不提供 subagent，原因是作者认为使用 tmux 等原语即可实现 subagent 的并行、避免上下文腐化等功能。我日常使用 [Herdr](https://herdr.dev/)，可以理解为 AI 时代的 tmux，比 subagent 更轻，还能让 Pi 直接操纵里面的 Claude Code、Codex 这些进程。
 
-![](https://raw.githubusercontent.com/L2ncE/images/main/PicGoPasted%20image%2020260831150427.png)
-
 ## 三、日常 Coding SOP
 
 ![](https://raw.githubusercontent.com/L2ncE/images/main/PicGoPasted%20image%2020260902212541.png)
