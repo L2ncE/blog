@@ -2,6 +2,8 @@
 title: 如何实现一个优雅的服务发现拓展 | Hertz 源码解读
 description: Hertz 源码解读系列，紧接服务注册一篇继续拆服务发现的设计与实现。
 date: 2022-11-12
+slug: hertz-service-discovery
+aliases: ["/posts/ru-he-shi-xian-yi-ge-you-ya-de-fu-wu-fa-xian-tuo-zhan-hertz-yuan-ma-jie-du/"]
 taxonomies:
   categories: ["Golang", "CloudWeGo"]
   tags: ["Go", "Golang", "CloudWeGo", "Hertz", "服务发现"]

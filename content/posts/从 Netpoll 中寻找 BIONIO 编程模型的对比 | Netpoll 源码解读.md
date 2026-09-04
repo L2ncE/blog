@@ -2,6 +2,8 @@
 title: 从 Netpoll 中寻找 BIO/NIO 编程模型的对比 | Netpoll 源码解读
 description: 解读 CloudWeGo 网络库 Netpoll 选择 NIO 而非 BIO 模型的原因，对比 Go 标准库的编程模型。
 date: 2022-11-03
+slug: netpoll-bio-nio
+aliases: ["/posts/cong-netpoll-zhong-xun-zhao-bionio-bian-cheng-mo-xing-de-dui-bi-netpoll-yuan-ma-jie-du/"]
 taxonomies:
   categories: ["Golang", "CloudWeGo"]
   tags: ["Go", "Golang", "CloudWeGo", "Netpoll", "计算机网络"]

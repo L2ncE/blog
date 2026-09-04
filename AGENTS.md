@@ -2,6 +2,16 @@
 
 Zola 静态博客（0.22.1），主题 no-style-please（vendored，无上游）。
 
+## 内容分区
+
+- 书评/读后感/读书笔记 → `content/books/`
+- 年终总结 → `content/annual/`
+- 技术文与杂谈随笔 → `content/posts/`
+
+## Slug 规范
+
+新文章 front-matter 必须显式写 `slug`：短英文 2-4 词 kebab-case（如 `hertz-csrf`、`annual-2024`）。省略时 Zola 会把中文标题转成超长拼音 URL，禁止。
+
 ## 改动验证
 
 任何改动完成后：

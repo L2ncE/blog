@@ -2,6 +2,8 @@
 title: 快速上手 Go 微服务开发 | CloudWeGo 101
 description: 从零到一带你使用 CloudWeGo 开源框架上手 Go 微服务开发，解决微服务入门难题。
 date: 2023-03-30
+slug: cloudwego-101
+aliases: ["/posts/kuai-su-shang-shou-go-wei-fu-wu-kai-fa-cloudwego-101/"]
 taxonomies:
   categories: ["CloudWeGo", "Golang"]
   tags: ["CloudWeGo", "bytedance", "开源", "Go", "Golang", "字节跳动"]

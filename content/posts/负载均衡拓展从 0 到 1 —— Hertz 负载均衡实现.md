@@ -2,6 +2,8 @@
 title: 负载均衡拓展从 0 到 1 —— Hertz 负载均衡实现
 description: Hertz 源码解读系列，拆负载均衡拓展的加权随机与轮询两种算法实现，最后配合服务发现完整实战。
 date: 2022-12-20
+slug: hertz-loadbalance
+aliases: ["/posts/fu-zai-jun-heng-tuo-zhan-cong-0-dao-1-hertz-fu-zai-jun-heng-shi-xian/"]
 taxonomies:
   categories: ["Golang", "CloudWeGo"]
   tags: ["Go", "Golang", "CloudWeGo", "负载均衡"]

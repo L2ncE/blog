@@ -2,6 +2,8 @@
 title: 原来防御 CSRF 攻击这么简单？ —— Hertz CSRF 中间件实战
 description: 讲解 CSRF 攻击原理，并演示如何在 Hertz 框架中用中间件进行防御实践。
 date: 2022-12-04
+slug: hertz-csrf
+aliases: ["/posts/yuan-lai-fang-yu-csrf-gong-ji-zhe-me-jian-dan-hertz-csrf-zhong-jian-jian-shi-zhan/"]
 taxonomies:
   categories: ["Golang", "CloudWeGo"]
   tags: ["Go", "Golang", "CloudWeGo", "csrf", "安全"]

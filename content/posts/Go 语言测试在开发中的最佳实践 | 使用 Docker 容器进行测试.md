@@ -2,6 +2,8 @@
 title: Go 语言测试在开发中的最佳实践 | 使用 Docker 容器进行测试
 description: 从零讲解 Go 单元测试与性能测试的设计实践，并介绍如何借助 Docker 容器搭建测试环境。
 date: 2022-08-06
+slug: go-testing-docker
+aliases: ["/posts/go-yu-yan-ce-shi-zai-kai-fa-zhong-de-zui-jia-shi-jian-shi-yong-docker-rong-qi-jin-xing-ce-shi/"]
 taxonomies:
   categories: ["Golang"]
   tags: ["Go", "Golang", "Docker", "云原生", "容器", "测试"]

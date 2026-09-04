@@ -2,6 +2,8 @@
 title: 再也不用花时间在找封面上了！—— 基于 Go 实现的文章封面生成器
 description: 每次写文章都在封面选择上犯难，于是用 Go 写了个开源封面生成器 cogen。
 date: 2022-12-22
+slug: go-cover-generator
+aliases: ["/posts/zai-ye-bu-yong-hua-shi-jian-zai-zhao-feng-mian-shang-liao-ji-yu-go-shi-xian-de-wen-zhang-feng-mian-sheng-cheng-qi/"]
 taxonomies:
   categories: ["Golang"]
   tags: ["Go", "Golang", "文章生成"]

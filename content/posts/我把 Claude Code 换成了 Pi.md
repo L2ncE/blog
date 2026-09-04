@@ -2,6 +2,8 @@
 title: 我把 Claude Code 换成了 Pi
 description: 分享把 Coding Agent 从 Claude Code 换成轻量级 Pi 的理由与使用体验，以及常用插件和 Tips。
 date: 2026-08-12
+slug: claude-code-to-pi
+aliases: ["/posts/wo-ba-claude-code-huan-cheng-liao-pi/"]
 taxonomies:
   categories: ["AI"]
   tags: ["杂谈", "AI", "Agent", "Pi", "Claude Code"]

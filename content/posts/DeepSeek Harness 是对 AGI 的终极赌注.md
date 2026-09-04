@@ -2,6 +2,8 @@
 title: DeepSeek Harness 是对 AGI 的终极赌注
 description: DeepSeek 开源 deepseek-harness 的设计哲学分析，读 Cordis 论文看懂热插拔背后的时空可组合性，以及为什么它是下给 AGI 的赌注。
 date: 2026-08-14
+slug: deepseek-harness-agi
+aliases: ["/posts/deepseek-harness-shi-dui-agi-de-zhong-ji-du-zhu/"]
 taxonomies:
   categories: ["AI"]
   tags: ["杂谈", "AI", "Agent", "DeepSeek"]

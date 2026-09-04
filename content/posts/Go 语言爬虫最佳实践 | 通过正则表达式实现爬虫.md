@@ -2,6 +2,8 @@
 title: Go 语言爬虫最佳实践 | 通过正则表达式实现爬虫
 description: 从爬虫和正则表达式的基本概念讲起，以百度贴吧为例，从单页爬取一路写到并发版。
 date: 2022-02-10
+slug: go-crawler-regex
+aliases: ["/posts/go-yu-yan-pa-chong-zui-jia-shi-jian-tong-guo-zheng-ze-biao-da-shi-shi-xian-pa-chong/"]
 taxonomies:
   categories: ["Golang"]
   tags: ["Go", "Golang", "爬虫"]

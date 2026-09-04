@@ -2,6 +2,8 @@
 title: 读懂 Warp 的 Agent Skill 自进化机制
 description: Warp 用两个 Skill 搭起自进化循环，人类反馈由 Improver 定期编译回 Skill 文件，Skill、Memory、Harness 各守一层约束。
 date: 2026-08-28
+slug: warp-agent-skills
+aliases: ["/posts/du-dong-warp-de-agent-skill-zi-jin-hua-ji-zhi/"]
 taxonomies:
   categories: ["AI"]
   tags: ["杂谈", "AI", "Agent", "Warp", "Claude"]

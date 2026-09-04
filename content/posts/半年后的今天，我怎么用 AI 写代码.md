@@ -2,6 +2,8 @@
 title: 半年后的今天，我怎么用 AI 写代码
 description: 分享 AI Coding 实践稳定下来后的工具栈与日常 SOP，从 grill 对齐到 Ensemble Review，以及为什么人工 Review 成了新瓶颈。
 date: 2026-09-02
+slug: ai-coding-now
+aliases: ["/posts/ban-nian-hou-de-jin-tian-wo-zen-me-yong-ai-xie-dai-ma/"]
 taxonomies:
   categories: ["AI"]
   tags: ["杂谈", "AI", "Agent", "AI Coding"]
@@ -78,7 +80,7 @@ AI Coding 迭代速度太快，这次分享的内容可能三个月后就会过�
 ## 参考
 
 - Harness Engineering，AI Coding 从随兴到可信的工程化路径
-- [我把 Claude Code 换成了 Pi](https://lanlance.cn/posts/wo-ba-claude-code-huan-cheng-liao-pi/)
+- [我把 Claude Code 换成了 Pi](https://lanlance.cn/posts/claude-code-to-pi/)
 - [The new rules of context engineering for Claude 5 generation models](https://claude.com/blog/the-new-rules-of-context-engineering-for-claude-5-generation-models)
 - [The AI-native SDLC playbook](https://claude.com/blog/the-ai-native-sdlc-playbook)
 - [The AI Engineering Skills Map In Detail, Software Engineering Fundamentals](https://charonhub.deeplearning.ai/the-ai-engineering-skills-map-in-detail-software-engineering-fundamentals/)

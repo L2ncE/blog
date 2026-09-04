@@ -7,9 +7,14 @@
 {% if config.extra.recent_pages -%}
 {% set recent_pages = config.extra.recent_pages | filter(attribute="lang", value=lang) | first -%}
 {% set limit = recent_pages.limit | default(value=5) -%}
-{% set section = get_section(path=recent_pages.section) -%}
+{% set first_section = get_section(path=recent_pages.sections | first) -%}
+{% set recent = [] %}
+{% for section_path in recent_pages.sections -%}
+{% set sec = get_section(path=section_path) -%}
+{% set_global recent = recent | concat(with=sec.pages) %}
+{% endfor -%}
 <ul>
-    {% for page in section.pages | sort(attribute='date') | reverse | slice(end=limit) -%}
+    {% for page in recent | sort(attribute='date') | reverse | slice(end=limit) -%}
     <li>
         <a href="{{ page.permalink | safe }}">{% if page.date %}{{ page.date }} - {% endif %}{{ macros::emoji_safe(txt=page.title) }}</a>
         <br />
@@ -17,8 +22,8 @@
     </li>
     {% endfor -%}
     <li>
-        <a href="{{ section.permalink }}">...{{ section.title }}</a>
+        <a href="{{ first_section.permalink }}">...{{ first_section.title }}</a>
     </li>
 </ul>
 {% endif -%}
-{% endblock content -%}
+{% endblock content %}

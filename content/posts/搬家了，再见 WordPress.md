@@ -2,6 +2,8 @@
 title: 搬家了，再见 WordPress
 description: 记录把博客从 WordPress 迁到 Cloudflare 部署的静态站的动机，追求极简风格与更稳定的体验。
 date: 2024-05-28
+slug: bye-wordpress
+aliases: ["/posts/ban-jia-liao-zai-jian-wordpress/"]
 taxonomies:
   categories: ["杂谈"]
   tags: ["杂谈"]

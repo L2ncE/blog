@@ -2,6 +2,8 @@
 title: 解读开源 HTTP 框架 Hertz | 服务注册拓展实现
 description: 解析 Hertz 框架服务注册拓展的实现，是本系列解析服务注册、服务发现与负载均衡拓展的首篇。
 date: 2022-11-20
+slug: hertz-service-registry
+aliases: ["/posts/jie-du-kai-yuan-http-kuang-jia-hertz-fu-wu-zhu-ce-tuo-zhan-shi-xian/"]
 taxonomies:
   categories: ["Golang", "CloudWeGo"]
   tags: ["Go", "Golang", "CloudWeGo", "Hertz", "服务注册"]

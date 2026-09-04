@@ -2,6 +2,8 @@
 title: 使用 gRPC-gateway 代替 HTTP 框架在Go语言中进行开发 | gRPC + gRPC-gateway 开发实践
 description: 以前要在 gRPC 上用 gin 再包一层 HTTP，这次试试 gRPC-gateway 直接暴露接口，开发确实快了不少。
 date: 2022-10-10
+slug: grpc-gateway
+aliases: ["/posts/shi-yong-grpc-gateway-dai-ti-http-kuang-jia-zai-goyu-yan-zhong-jin-xing-kai-fa-grpc-grpc-gateway-kai-fa-shi-jian/"]
 taxonomies:
   categories: ["Golang"]
   tags: ["Go", "Golang", "gRPC", "gRPC-gateway"]

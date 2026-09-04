@@ -2,6 +2,8 @@
 title: GORM 快速入门最佳实践（含有样例数据库）
 description: 以选课系统为样例数据库，讲解 GORM 的基础使用与常见最佳实践。
 date: 2022-04-24
+slug: gorm-101
+aliases: ["/posts/gorm-kuai-su-ru-men-zui-jia-shi-jian-han-you-yang-li-shu-ju-ku/"]
 taxonomies:
   categories: ["Golang"]
   tags: ["Go", "Golang", "gorm", "数据库"]

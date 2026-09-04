@@ -2,6 +2,8 @@
 title: 读懂 Pi 的上下文压缩机制
 description: 结合 Chroma 的 context rot 研究解读 Pi 的 compaction 设计，从上下文膨胀、压缩流程到缓存代价，以及我在压缩和清空之间的取舍。
 date: 2026-08-17
+slug: pi-context-compaction
+aliases: ["/posts/du-dong-pi-de-shang-xia-wen-ya-suo-ji-zhi/"]
 taxonomies:
   categories: ["AI"]
   tags: ["AI", "Agent", "Pi", "LLM"]

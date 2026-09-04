@@ -2,6 +2,8 @@
 title: 基于 Hertz 和 Kitex 的 Go 微服务项目 | 开源项目推荐（自己给自己打广子）
 description: 介绍一个基于 CloudWeGo 的 Hertz 与 Kitex 开源的 Go 微服务项目，涵盖服务注册发现、配置中心等实践。
 date: 2023-01-23
+slug: hertz-kitex-microservice
+aliases: ["/posts/ji-yu-hertz-he-kitex-de-go-wei-fu-wu-xiang-mu-kai-yuan-xiang-mu-tui-jian/"]
 taxonomies:
   categories: ["CloudWeGo", "Golang"]
   tags: ["CloudWeGo", "Go", "Golang", "Hertz", "KiteX"]

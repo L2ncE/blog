@@ -8,7 +8,9 @@ Deployed on Cloudflare Pages
 blog/
 ├── zola.toml            # 站点配置
 ├── content/             # 文章内容
-│   ├── posts/           # 博客文章
+│   ├── posts/           # 技术文与杂谈
+│   ├── books/           # 书评/读书笔记
+│   ├── annual/          # 年终总结
 │   ├── about/           # 关于页面
 │   └── friends/         # 友链页面
 ├── static/              # 静态资源（含 _headers 缓存规则）

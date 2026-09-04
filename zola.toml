@@ -28,8 +28,9 @@ theme = "github-light"
 logo = "images/logo.png"
 header_nav = [
     { lang = "zh", name = "home", path = "/" },
-    { lang = "zh", name = "archived", path = "/posts" },
-    { lang = "zh", name = "tags", path = "/tags" },
+    { lang = "zh", name = "posts", path = "/posts" },
+    { lang = "zh", name = "books", path = "/books" },
+    { lang = "zh", name = "annual", path = "/annual" },
     { lang = "zh", name = "categories", path = "/categories" },
     { lang = "zh", name = "friends", path = "/friends" },
     { lang = "zh", name = "about", path = "/about" },
@@ -37,12 +38,10 @@ header_nav = [
 footer_nav = [
     { name = "RSS", url = "/atom.xml" },
     { name = "Github", url = "https://github.com/L2ncE" },
-    { name = "Twitter", url = "https://twitter.com/LanLance24" },
-    { name = "DEV", url = "https://dev.to/llance_24" },
-    { name = "Juejin", url = "https://juejin.cn/user/2837173444548711" },
+    { name = "X", url = "https://twitter.com/LanLance24" },
 ]
 recent_pages = [
-    { lang = "zh", section = "posts/_index.md", limit = 7 },
+    { lang = "zh", sections = ["posts/_index.md", "books/_index.md", "annual/_index.md"], limit = 7 },
 ]
 taxonomies_map = [
     { lang = "zh", taxonomy = "tags", name = "tags"},

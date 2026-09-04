@@ -2,6 +2,8 @@
 title: 使用 Go 语言实现单词翻译功能 | simpledict 命令行词典
 description: 通过抓包获取翻译接口并在 Go 中实现一个命令行词典 simpledict。
 date: 2022-05-07
+slug: simpledict
+aliases: ["/posts/shi-yong-go-yu-yan-shi-xian-dan-ci-fan-yi-gong-neng-simpledict-ming-ling-xing-ci-dian/"]
 taxonomies:
   categories: ["Golang"]
   tags: ["Go", "Golang", "计算机网络"]
