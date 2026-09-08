@@ -7,7 +7,7 @@ taxonomies.categories = ["AI"]
 taxonomies.tags = ["杂谈", "AI", "Agent", "LLM"]
 +++
 
-一个月前我在《别让 LLM 当 JSON 搬运工》的结论是别让昂贵的神经网络去倒腾细碎的 JSON，让模型写出程序，扔进受控沙箱批量编排工具。这篇可以在[这里](https://blog.lanlance.cn/posts/llm-json-mover/)看到。
+一个月前我在[《别让 LLM 当 JSON 搬运工》](https://lanlance.cn/posts/llm-json-mover/)的结论是别让昂贵的神经网络去倒腾细碎的 JSON，让模型写出程序，扔进受控沙箱批量编排工具。
 
 但技术的推进速度往往比预期更快。刚过去的一个月里，前沿模型在真实工程环境里跑出了新表现，把这套刚建立起来的认知推到了新的分叉口。
 
