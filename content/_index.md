@@ -2,8 +2,6 @@
 description: "LanLane's blog index page"
 ---
 
-👏 欢迎关注小红书：[LanLance](https://raw.githubusercontent.com/L2ncE/images/main/PicGo/imagesb1616c0ba9e91a4d9695dba8b91b4164_720.png)
-
 📸 我拍的照: [photo.lanlance.cn](https://photo.lanlance.cn/)
 
 📚 知识碎片: [gists.lanlance.cn](https://gists.lanlance.cn/)
