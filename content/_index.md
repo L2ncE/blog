@@ -8,9 +8,9 @@ description: "LanLane's blog index page"
 
 ## Facts
 
-- 🎵 看过 Ye（两次海口）、Tyler（首尔）、Ed Sheeran（杭州）、XG（成都）
+- 🎵 看过 Ye（海口*2）、Tyler（首尔）、Ed Sheeran（杭州）、XG（成都）、The Weeknd（新加坡）
 - 🏎️ 去过两次 F1 上海大奖赛现场
-- 🌏 旅行过中国所有的省份 & 四个国家（🇨🇳🇹🇭🇯🇵🇰🇷）
+- 🌏 旅行过中国所有的省份 & 🇨🇳🇹🇭🇯🇵🇰🇷🇸🇬🇻🇳
 
 ## Sharing
 
