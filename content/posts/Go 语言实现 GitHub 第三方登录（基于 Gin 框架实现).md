@@ -28,17 +28,12 @@ taxonomies:
 
 我们需要先在 GitHub 上进行登记处理，依次按以下操作进行.
 
-![image-20220313172451550](https://picture.lanlance.cn/i/2023/08/10/64d4736b218b9.png)
 
-![image-20220313172526740](https://picture.lanlance.cn/i/2023/08/10/64d476035db20.png)
 
-![image-20220313172544797](https://picture.lanlance.cn/i/2023/08/10/64d4761f7358c.png)
 
 callback URL 最为重要，此地址为重定向回的 URL 。
 
-![image20220313172600886](https://picture.lanlance.cn/i/2023/08/10/64d47635c11f5.png)
 
-![image-20220313172625131](https://picture.lanlance.cn/i/2023/08/10/64d4764820084.png)
 
 Client ID 和 secrets 会在后面有帮助。
 
@@ -54,7 +49,6 @@ Client ID 和 secrets 会在后面有帮助。
 
 client_id 为上文中所获得的，url 需要和 GitHub 中输入的保持一致
 
-![image-20220313173756982](https://picture.lanlance.cn/i/2023/08/10/64d4768ac948e.png)
 
 ### 后端实现
 
@@ -188,7 +182,6 @@ func Oauth(ctx *gin.Context) {
 
 由于没有前端，只能看看网页呈现的JSON格式资源
 
-![image-20220313193624273](https://picture.lanlance.cn/i/2023/08/10/64d4769e99046.png)
 
 ## 结语
 如果有没弄清楚的地方欢迎大家向我提问，我都会尽力解答

@@ -18,26 +18,21 @@ taxonomies:
 
 >想用啥单词都行，都是一样的
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47748062c6.png)
 
 之后我们 F12 或者右键检查打开浏览器开发者工具，并在其中选择网络项。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d4776e7300d.png)
 
 
 在下面的请求中我们找到叫做 dict 的请求，并在标头中检查请求方法是否为 **POST** 。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d477597312a.png)
 
 检查完毕之后就可以把将接口拿走，我们可以可以先选择将它复制为 cURL(bash) 。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d4778475d7e.png)
 
 然后我们转到一个[转译网站](https://curlconverter.com/#go)，它可以将 cURL 转换成 Go 语言的写法(并适用于其他多种语言)。
 
 我们先选择 Go 语言，再将我们刚才复制好的 cURL 粘贴进去。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47798de5be.png)
 
 然后我们就可以在下面将 Go 语言复制进我们的 IDE 了。
 
@@ -113,11 +108,9 @@ var data = bytes.NewReader(buf)
 
 我们先回到刚才的彩云小译界面，选择标头旁边的预览，将里面的值复制下来。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d477b08b49a.png)
 
 复制完之后我们可以使用一个在线转换工具进行转换，并在其中选择嵌套转换。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d477c1dbec6.png)
 
 然后将右边的结构体复制到 Go 中即可。
 

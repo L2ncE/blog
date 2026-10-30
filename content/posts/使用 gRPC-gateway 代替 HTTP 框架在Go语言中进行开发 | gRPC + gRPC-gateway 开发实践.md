@@ -245,10 +245,8 @@ func main() {
 ### 测试
 
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d4789c53cc5.png)
 
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d478aebc8a6.png?)
 
 ## 结语
 如果有没弄清楚的地方欢迎大家向我提问，我都会尽力解答

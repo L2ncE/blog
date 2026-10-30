@@ -236,7 +236,6 @@ func SelectQuestionByStuId(id int) string {
 }
 ```
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47700b86eb.png)
 
 ***
 至此增删改查功能基本实现就到此为止，接下来我们一起来看看更加高级的操作。
@@ -257,10 +256,8 @@ func SelectStuCourse(id int) ([]model.StuCourseInfo, error) {
 这个函数中最主要的就是使用了 `Preload` 预加载，我们Postman 上看看效果。
 
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d4771522ede.png)
 
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d4772359a02.png)
 会一个接一个的响应出来，而这样一对多的实现方法就是 `gorm` 中的 `preload` 预加载。
 
 代码和效果都看完了，我们现在来看看他的模型是怎么样的，是如何设计才能程序这样的效果呢，这里我们把这个实现的所有模型都给到。

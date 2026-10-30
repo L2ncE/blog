@@ -51,20 +51,16 @@ Hertz 默认使用自研的高性能网络库 Netpoll，在一些特殊场景中
 
 ### 调用关系
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d479aa2278e.png)
 
 ### 技术架构
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d479bf03dba.png)
 
 ### 服务关系
 
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d479d1af450.png)
 
 ## 页面展示
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d479e71d858.png)
 
 ## 目录介绍
 
@@ -99,8 +95,6 @@ make start
 >
 > 默认命名空间以及配置组等请参考各个 `config.yaml` 配置文件。
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d479fb2c66b.png)
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47a0b85aaf.png)
 
 
 关于配置中心的详细配置，详见。
@@ -131,13 +125,11 @@ make trip
 
 > 在浏览器上访问 `http://127.0.0.1:16686/`
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47a1fb465c.png)
 
 ### Prometheus
 
 > 在浏览器上访问 `http://127.0.0.1:3000/`
 
-![image.png](https://picture.lanlance.cn/i/2023/08/10/64d47a435d42f.png)
 
 ## API 请求
 

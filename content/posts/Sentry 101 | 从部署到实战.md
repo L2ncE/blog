@@ -87,7 +87,6 @@ git clone https://github.com/getsentry/self-hosted sentry
 
 安装需要一段时间，如果安装成功你应该看到以下内容
 
-![](https://picture.lanlance.cn/i/2023/08/11/64d5c9ed4bc1b.png)
 
 现在我们可以运行提示的命令并且启动 Sentry
 
@@ -249,13 +248,11 @@ sentry_sdk.init(
 
 这里的 DSN 填写在后台管理创建项目中得到的 DSN。
 
-![dsn](https://picture.lanlance.cn/i/2023/08/25/64e83f4163586.png)
 
 接着在项目中如果出现了报错或日志输出，就能在 Sentry 中得到清晰的结果。
 
 例如下面是一个 HTTPException，他会将报错的位置呈现到 Issue 中。
 
-![img](https://picture.lanlance.cn/i/2023/08/25/64e83eeb9577c.png)
 
 ### 配置
 

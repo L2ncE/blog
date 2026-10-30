@@ -33,8 +33,7 @@ taxonomies.tags = ["杂谈", "AI", "Agent", "LLM", "MCP"]
 
 Cloudflare 选择用工程手段解决这个问题，只暴露两个工具的 MCP server，search() 和 execute()，合计约 1000 token。模型先调 search() 写代码过滤 spec 信息，把几千个 endpoint 筛到自己需要的那几个，spec 渐进式披露基本不占用上下文。接着调 execute() 在 sandbox 里发起真实调用，分页、检查响应、链式编排等都在一次执行里完成。在 Cloudflare 给的防御 DDoS 攻击例子里，从搜 endpoint、查 schema 到更新配置全程四次 tool call，输入 token 相比原生 MCP server 减少 99.9%。
 
-![](https://raw.githubusercontent.com/L2ncE/images/main/PicGoPasted%20image%2020260821181947.png)
-
+<img src="/images/posts/picgopasted-image-20260821181947-d7bb7ae2.webp" width="1430" height="358" loading="lazy" decoding="async" alt="">
 ## Everything CLI 的思想
 
 Coding Agent 越来越倾向于给模型一个 shell，而不是一千个预定义的 tool，这与 Code Mode 是同一套思想的不同实现。找最近修改的 20 个 Python 文件并统计其中的 TODO，find 加 xargs grep 一句话干完，换成 tool calling 就是好几轮 turn 往返。代码本身已经是一种工具组合语言，模型生成程序，程序去编排工具，中间不需要大模型参与。

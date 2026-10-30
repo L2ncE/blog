@@ -37,7 +37,6 @@ RPC 通常有较重的处理逻辑（业务逻辑、编解码），耗时长，�
 
 让我们回到前言中的问题——为何在 Netpoll 中使用了 NIO 模型？让我们虚构一个场景，若有 N 个连接满负载传输时，此时的连接利用率为100%。在 BIO 模型中会有 N 个 goroutine ，在 NIO 模型会有小于等于 N 个 goroutine 。而在第二个场景中，此时有 N 个连接满负载传输并挂起 4N 个空闲连接，此时的连接利用率为20%。重点来了，此时的 BIO 模型中会有 5N 个 goroutine ，而 NIO 模型中也只有小于等于 N 个 goroutine 。
 
-![image.png](https://picture.lanlance.cn/i/2022/11/03/63633e3eb9bb0.png)
 
 ### 为什么选择 NIO
 

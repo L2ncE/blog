@@ -100,6 +100,7 @@ blockquote {
 
 img {
   max-width: 100%;
+  height: auto; // 配合 <img width height>，避免 max-width 收窄时被拉变形
   display: block;
   margin: 0 auto;
 }
