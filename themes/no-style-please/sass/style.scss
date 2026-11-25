@@ -282,32 +282,6 @@ nav, .taxonomies { text-align: center; }
   img { width: 100%; height: auto; }
 }
 
-.f1-track {
-  display: inline-block;
-  margin-left: 0.35rem;
-  vertical-align: top;
-  summary {
-    cursor: pointer;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.85em;
-    color: #57606a;
-    user-select: none;
-  }
-  svg {
-    display: block;
-    width: 240px;
-    height: auto;
-    margin: 0.5rem 0 0.2rem;
-    color: #000;
-  }
-  .f1-caption {
-    display: block;
-    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-    font-size: 0.78em;
-    color: #57606a;
-  }
-}
-
 .friends-grid {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -346,7 +320,7 @@ nav, .taxonomies { text-align: center; }
 }
 
 @media print {
-  header nav, .copy-btn, .post-nav, #giscus-mount, footer, .read-progress, .zola-anchor, .f1-track {
+  header nav, .copy-btn, .post-nav, #giscus-mount, footer, .read-progress, .zola-anchor {
     display: none !important;
   }
   .w { max-width: 100%; padding: 0; }

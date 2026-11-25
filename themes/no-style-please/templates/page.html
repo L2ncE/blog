@@ -23,7 +23,7 @@
 
 {% block header -%}
 <p><a href="..">..</a>/{{ page.slug }}</p>
-<p class="post-meta">{% if page.date %}<time datetime="{{ page.date }}">{{ page.date }}</time>{% endif %}{% if page.word_count %} / {{ page.word_count }} 字 / {{ page.reading_time }} min{% endif %}</p>
+{% if page.date %}<p class="post-meta"><time datetime="{{ page.date }}">{{ page.date }}</time>{% if page.word_count %} / {{ page.word_count }} 字 / {{ page.reading_time }} min{% endif %}</p>{% endif %}
 <h1>{{ macros::emoji_safe(txt=page.title) }}</h1>
 {% endblock header -%}
 
