@@ -41,8 +41,12 @@ body {
 }
 
 a {
-  text-underline-offset: 3px;
-  text-decoration-thickness: 1px;
+  text-decoration: none;
+  &:hover {
+    text-decoration: underline;
+    text-underline-offset: 3px;
+    text-decoration-thickness: 1px;
+  }
 }
 
 ::selection {
@@ -302,14 +306,6 @@ nav, .taxonomies { text-align: center; }
     font-size: 1em;
     color: #000;
   }
-}
-
-.edge-info {
-  margin: 0;
-  color: #57606a;
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
-  font-size: 0.75rem;
-  min-height: 1.1em;
 }
 
 @media (max-width: 640px) {
