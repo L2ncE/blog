@@ -1,0 +1,25 @@
+{
+  "entries": [
+    {
+      "identifier": "urn:air:lanlance.cn:blog:llms-index",
+      "displayName": "LanLance Blog Index",
+      "description": "Technical blog on Go microservices, CloudWeGo (Hertz/Kitex/Netpoll), high-concurrency backend architecture, and AI coding workflows.",
+      "type": "application/ai-catalog+json",
+      "url": "https://lanlance.cn/llms.txt",
+      "representativeQueries": [
+        "Go Hertz middleware and CloudWeGo microservice architecture articles by LanLance",
+        "AI coding harness, Pi agent, and context compaction notes by LanLance"
+      ],
+      "tags": [
+        "go",
+        "cloudwego",
+        "backend",
+        "ai-coding",
+        "blog"
+      ],
+      "trustManifest": {
+        "identity": "lanlance.cn"
+      }
+    }
+  ]
+}

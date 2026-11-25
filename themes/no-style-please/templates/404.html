@@ -1,5 +1,29 @@
 {% extends "base.html" -%}
 
 {% block content -%}
-    404
+{% set posts = get_section(path="posts/_index.md") -%}
+<div class="term-404">
+<pre><code>$ cd <span id="err-path">/unknown</span>
+bash: cd: <span id="err-path-2">/unknown</span>: No such file or directory
+[exit 2]</code></pre>
+<p>Try one of these:</p>
+<ul>
+    <li><a href="/">cd ~</a> (home)</li>
+    <li><a href="/posts/">ls ~/posts</a> (all posts)</li>
+    <li><a id="rand-post" href="/posts/">shuf -n 1 ~/posts</a> (random post)</li>
+</ul>
+</div>
+<script>
+(function(){
+  var p = location.pathname || '/';
+  var e1 = document.getElementById('err-path'), e2 = document.getElementById('err-path-2');
+  if (e1) e1.textContent = p;
+  if (e2) e2.textContent = p;
+  var posts = [{% for p in posts.pages %}{{ p.permalink | json_encode() | safe }}{% if not loop.last %},{% endif %}{% endfor %}];
+  var r = document.getElementById('rand-post');
+  if (r && posts.length) {
+    r.href = posts[Math.floor(Math.random() * posts.length)];
+  }
+})();
+</script>
 {% endblock content -%}

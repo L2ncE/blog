@@ -17,7 +17,7 @@
 <ul>
     {% for page in pages %}
     <li>
-        <a href="{{ page.permalink | safe }}">{{ page.date }} - {{ macros::emoji_safe(txt=page.title) }}</a>
+        <a href="{{ page.permalink | safe }}"><time class="post-date">{{ page.date }}</time> - {{ macros::emoji_safe(txt=page.title) }}</a>
         <br />
         {{ macros::emoji_safe(txt=page.description) }}
     </li>

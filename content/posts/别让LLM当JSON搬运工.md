@@ -33,7 +33,7 @@ taxonomies.tags = ["杂谈", "AI", "Agent", "LLM", "MCP"]
 
 Cloudflare 选择用工程手段解决这个问题，只暴露两个工具的 MCP server，search() 和 execute()，合计约 1000 token。模型先调 search() 写代码过滤 spec 信息，把几千个 endpoint 筛到自己需要的那几个，spec 渐进式披露基本不占用上下文。接着调 execute() 在 sandbox 里发起真实调用，分页、检查响应、链式编排等都在一次执行里完成。在 Cloudflare 给的防御 DDoS 攻击例子里，从搜 endpoint、查 schema 到更新配置全程四次 tool call，输入 token 相比原生 MCP server 减少 99.9%。
 
-<img src="/images/posts/picgopasted-image-20260821181947-d7bb7ae2.webp" width="1430" height="358" loading="lazy" decoding="async" alt="">
+<img src="/images/posts/picgopasted-image-20260821181947-d7bb7ae2.webp" width="1430" height="358" loading="lazy" decoding="async" alt="Cloudflare Code Mode 减少 MCP 上下文 Token 消耗对比图">
 
 ## Everything CLI 的思想
 

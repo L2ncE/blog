@@ -23,13 +23,14 @@
 
 {% block header -%}
 <p><a href="..">..</a>/{{ page.slug }}</p>
-<p class="post-meta"><time datetime="{{ page.date }}">{{ page.date }}</time></p>
+<p class="post-meta">{% if page.date %}<time datetime="{{ page.date }}">{{ page.date }}</time>{% endif %}{% if page.word_count %} / {{ page.word_count }} 字 / {{ page.reading_time }} min{% endif %}</p>
 <h1>{{ macros::emoji_safe(txt=page.title) }}</h1>
 {% endblock header -%}
 
 {% block content -%}
-{% if page.toc and page.extra.add_toc -%}
-ToC
+{% if page.toc and (page.toc | length >= 3 or page.extra.add_toc) -%}
+<details class="toc">
+<summary>ToC</summary>
 <ul>
 {% for h1 in page.toc -%}
     <li>
@@ -46,11 +47,18 @@ ToC
     </li>
 {% endfor -%}
 </ul>
+</details>
 {% endif -%}
 {{ macros::emoji_safe(txt=page.content) }}
 {% endblock content -%}
 
 {% block footer -%}
+{% if page.lower or page.higher -%}
+<nav class="post-nav" aria-label="Post navigation">
+    {% if page.higher %}<a class="post-nav-prev" href="{{ page.higher.permalink | safe }}">&larr; {{ macros::emoji_safe(txt=page.higher.title) }}</a>{% else %}<span></span>{% endif %}
+    {% if page.lower %}<a class="post-nav-next" href="{{ page.lower.permalink | safe }}">{{ macros::emoji_safe(txt=page.lower.title) }} &rarr;</a>{% endif %}
+</nav>
+{% endif -%}
 <p class="taxonomies">
     {% if page.taxonomies.tags -%}
     {% for tag in page.taxonomies.tags -%}
@@ -75,21 +83,80 @@ ToC
 </p>
 {% if config.extra.giscus.enable -%}
 {% set giscus_lang = config.extra.giscus.lang_map | filter(attribute="lang", value=lang) | map(attribute="to") | first | default(value=lang) -%}
-<script src="https://giscus.app/client.js"
-    data-repo="{{ config.extra.giscus.data_repo }}"
-    data-repo-id="{{ config.extra.giscus.data_repo_id }}"
-    data-category="{{ config.extra.giscus.data_category }}"
-    data-category-id="{{ config.extra.giscus.data_category_id }}"
-    data-mapping="og:title"
-    data-strict="0"
-    data-reactions-enabled="1"
-    data-emit-metadata="0"
-    data-input-position="{{ config.extra.giscus.data_input_position | default(value='bottom') }}"
-    data-theme="{{ config.extra.giscus.data_theme | default(value='preferred_color_scheme') }}"
-    data-lang="{{ giscus_lang }}"
-    data-loading="{{ config.extra.giscus.data_loading | default(value='lazy') }}"
-    crossorigin="anonymous"
-    async>
-</script>
+<div id="giscus-mount"></div>
 {% endif -%}
+<script>
+(function(){
+  document.querySelectorAll('pre').forEach(function(pre){
+    var code = pre.querySelector('code');
+    if (!code) return;
+    var btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'copy-btn';
+    btn.setAttribute('aria-label', 'Copy code');
+    btn.textContent = 'copy';
+    btn.addEventListener('click', function(){
+      if (!navigator.clipboard) return;
+      navigator.clipboard.writeText(code.innerText).then(function(){
+        btn.textContent = 'copied';
+        setTimeout(function(){ btn.textContent = 'copy'; }, 1500);
+      });
+    });
+    pre.appendChild(btn);
+  });
+  var imgs = document.querySelectorAll('main img');
+  if (imgs.length) {
+    var dlg = document.createElement('dialog');
+    dlg.className = 'img-lightbox';
+    var dImg = document.createElement('img');
+    dlg.appendChild(dImg);
+    document.body.appendChild(dlg);
+    dlg.addEventListener('click', function(){ dlg.close(); });
+    imgs.forEach(function(img){
+      img.addEventListener('click', function(){
+        dImg.src = img.currentSrc || img.src;
+        dImg.alt = img.alt || '';
+        dlg.showModal();
+      });
+    });
+  }
+  {% if config.extra.giscus.enable -%}
+  var mount = document.getElementById('giscus-mount');
+  if (mount) {
+    var loaded = false;
+    var loadGiscus = function(){
+      if (loaded) return;
+      loaded = true;
+      var s = document.createElement('script');
+      s.src = 'https://giscus.app/client.js';
+      s.setAttribute('data-repo', '{{ config.extra.giscus.data_repo }}');
+      s.setAttribute('data-repo-id', '{{ config.extra.giscus.data_repo_id }}');
+      s.setAttribute('data-category', '{{ config.extra.giscus.data_category }}');
+      s.setAttribute('data-category-id', '{{ config.extra.giscus.data_category_id }}');
+      s.setAttribute('data-mapping', 'og:title');
+      s.setAttribute('data-strict', '0');
+      s.setAttribute('data-reactions-enabled', '1');
+      s.setAttribute('data-emit-metadata', '0');
+      s.setAttribute('data-input-position', '{{ config.extra.giscus.data_input_position | default(value="bottom") }}');
+      s.setAttribute('data-theme', '{{ config.extra.giscus.data_theme | default(value="preferred_color_scheme") }}');
+      s.setAttribute('data-lang', '{{ giscus_lang }}');
+      s.crossOrigin = 'anonymous';
+      s.async = true;
+      mount.appendChild(s);
+    };
+    if ('IntersectionObserver' in window) {
+      var io = new IntersectionObserver(function(entries){
+        if (entries.some(function(e){ return e.isIntersecting; })) {
+          io.disconnect();
+          loadGiscus();
+        }
+      }, { rootMargin: '250px' });
+      io.observe(mount);
+    } else {
+      loadGiscus();
+    }
+  }
+  {% endif -%}
+})();
+</script>
 {% endblock footer -%}

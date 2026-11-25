@@ -21,7 +21,7 @@ render_emoji = true
 lazy_async_image = true
 
 [markdown.highlighting]
-theme = "github-light"
+theme = "github-light-high-contrast"
 
 
 [extra]

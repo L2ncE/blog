@@ -1,18 +1,26 @@
 # LanLance's Blog
 
-> LanLance.cn - Code is Cheap
+> LanLance.cn - Code is Cheap. Personal technical blog covering Go microservices, CloudWeGo (Hertz/Kitex/Netpoll), high-concurrency backend architecture, and AI coding workflows, alongside reading notes and annual reviews.
 
-个人技术博客：Go 微服务、CloudWeGo 生态（Hertz/Kitex/Netpoll）、后端架构与性能优化、AI 编程工具实践，兼有读书笔记与年终总结。
+## Sections
 
-## 内容
+- [Posts](https://lanlance.cn/posts/): Technical articles on Go, CloudWeGo, distributed systems, and AI engineering.
+- [Books](https://lanlance.cn/books/): Reading notes and book reviews.
+- [Annual Reviews](https://lanlance.cn/annual/): Yearly reflections from 2022 to 2025.
+- [Categories](https://lanlance.cn/categories/): Articles grouped by topic category.
+- [Tags](https://lanlance.cn/tags/): Articles grouped by tag.
+- [About](https://lanlance.cn/about/): Background, open-source contributions, and work experience.
+- [Atom Feed](https://lanlance.cn/atom.xml): Latest 20 entries in Atom XML format.
 
-- 文章归档：https://lanlance.cn/posts/
-- 书评：https://lanlance.cn/books/
-- 年终总结：https://lanlance.cn/annual/
-- 分类：https://lanlance.cn/categories/
-- 标签：https://lanlance.cn/tags/
-- RSS：https://lanlance.cn/atom.xml
+## Featured Posts
 
-## 抓取与使用
+- [Harness 和 LLM 的动态博弈](https://lanlance.cn/posts/harness-llm-dynamic-game/): Evolution of agent tool orchestration and why Harness boundaries shift with stronger models.
+- [半年后的今天，我怎么用 AI 写代码](https://lanlance.cn/posts/ai-coding-now/): Practical AI coding stack, SOP, and Ensemble Review workflow.
+- [读懂 Warp 的 Agent Skill 自进化机制](https://lanlance.cn/posts/warp-agent-skills/): Self-evolving Base + Improver skill loop driven by human feedback.
+- [别让 LLM 当 JSON 搬运工](https://lanlance.cn/posts/llm-json-mover/): Cloudflare Code Mode and Everything-CLI design philosophy.
+- [C 端高并发下的 KV 存储优化](https://lanlance.cn/posts/kv-storage-optimization/): Solving large-value KV bottlenecks using Apache Fory and Zstd.
 
-允许 AI 抓取本站内容用于搜索、问答引用与模型训练。
+## Usage
+
+- Content negotiation: send `Accept: text/markdown` to any post URL to receive clean Markdown.
+- AI crawlers and agents are permitted to index, cite, and use content from this site.

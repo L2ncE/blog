@@ -22,9 +22,6 @@
 }
 // -------------------------------------------- //
 
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
 // 注意：本文件编译后的 CSS 已内联到 templates/base.html 的 <style> 块中。
 // 修改样式后需重新 build，把 public/style.css 的内容同步到 base.html。
 
@@ -43,11 +40,38 @@ body {
   overflow-x: hidden;
 }
 
+a {
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.post-date, .post-meta {
+  color: #57606a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.88em;
+  font-variant-numeric: tabular-nums;
+}
+
 .post-meta { text-align: right; }
 
 h2 { margin-top: 2.5rem; }
 
 h3, h4, h5, h6 { margin-top: 1.75rem; }
+
+.zola-anchor {
+  margin-left: 0.4rem;
+  text-decoration: none;
+  opacity: 0;
+  color: #57606a;
+}
+
+h1:hover .zola-anchor,
+h2:hover .zola-anchor,
+h3:hover .zola-anchor,
+h4:hover .zola-anchor,
+.zola-anchor:focus {
+  opacity: 1;
+}
 
 hr { margin: 2rem 0; }
 
@@ -90,20 +114,51 @@ code {
   font-size: 0.9em;
 }
 
+pre {
+  position: relative;
+  margin: 1.25rem 0;
+}
+
 pre code {
   display: block;
   overflow-x: auto;
-  padding: 1rem;
+  padding: 1.85rem 1rem 1rem;
   color: #24292e;
-  background: #f6f8fa;
+  background: #ffffff;
   border: 1px solid #d0d7de;
   line-height: 1.5;
 }
 
+pre code[data-lang]::before {
+  content: attr(data-lang);
+  position: absolute;
+  top: 0.35rem;
+  left: 0.75rem;
+  font-size: 0.72rem;
+  color: #57606a;
+  text-transform: lowercase;
+  user-select: none;
+}
+
+.copy-btn {
+  position: absolute;
+  top: 0.25rem;
+  right: 0.5rem;
+  background: #fff;
+  border: 1px solid #d0d7de;
+  color: #57606a;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.72rem;
+  padding: 0.1rem 0.45rem;
+  cursor: pointer;
+}
+
 blockquote {
-  font-style: italic;
-  border: thin solid black;
-  padding: 1rem;
+  font-style: normal;
+  border: 0;
+  border-left: 3px solid #000;
+  padding: 0.25rem 1rem;
+  color: #333;
 
   p { margin: 0; }
 }
@@ -113,6 +168,63 @@ img {
   height: auto; // 配合 <img width height>，避免 max-width 收窄时被拉变形
   display: block;
   margin: 0 auto;
+}
+
+main img { cursor: zoom-in; }
+
+dialog.img-lightbox {
+  border: 0;
+  padding: 0;
+  background: transparent;
+  max-width: 92vw;
+  max-height: 92vh;
+  overflow: visible;
+  &::backdrop { background: rgba(0, 0, 0, 0.75); }
+  img {
+    max-width: 92vw;
+    max-height: 92vh;
+    width: auto;
+    height: auto;
+    cursor: zoom-out;
+  }
+}
+
+details.toc {
+  margin: 1.5rem 0;
+  padding: 0.6rem 1rem;
+  border-left: 2px solid #d0d7de;
+  summary {
+    cursor: pointer;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.9em;
+    color: #57606a;
+  }
+  ul {
+    margin: 0.5rem 0 0;
+    padding-left: 1.25rem;
+  }
+}
+
+.post-nav {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin: 2.5rem 0 1.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid #d0d7de;
+  font-size: 0.92em;
+}
+
+.term-404 pre {
+  padding: 1rem;
+  border: 1px solid #d0d7de;
+  background: #ffffff;
+  overflow-x: auto;
+}
+
+.term-404 pre code {
+  border: 0;
+  padding: 0;
 }
 
 .footnote-definition {
@@ -139,4 +251,5 @@ nav, .taxonomies { text-align: center; }
 @media (max-width: 640px) {
   .w { padding: 2rem 1.25rem; }
   table { display: block; overflow-x: auto; }
+  .post-nav { flex-direction: column; }
 }
