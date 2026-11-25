@@ -53,7 +53,6 @@ function renderTerminalCard(entries) {
     `${c.bold}${c.cyan}|_____\\__,_|_| |_||_____\\__,_|_| |_|\\___\\___|     ${c.reset}`,
     "",
     `${c.bold}LanLance's Blog${c.reset} ${c.dim}// Code is Cheap${c.reset}`,
-    `${c.dim}Go / CloudWeGo (Hertz/Kitex/Netpoll) / Backend / AI Coding${c.reset}`,
     "",
     `${c.green}web${c.reset}     https://lanlance.cn/        ${c.green}photo${c.reset}  https://photo.lanlance.cn/`,
     `${c.green}gists${c.reset}   https://gists.lanlance.cn/  ${c.green}rss${c.reset}    https://lanlance.cn/atom.xml`,
@@ -66,11 +65,12 @@ function renderTerminalCard(entries) {
     lines.push(`  ${c.dim}${e.date}${c.reset}  ${c.bold}${e.title}${c.reset}`);
     lines.push(`              ${c.blue}${e.href}${c.reset}`);
   }
+  const tipUrl = (entries[0] && entries[0].href) || "https://lanlance.cn/posts/harness-llm-dynamic-game/";
   lines.push(
     "",
     `${c.bold}${c.yellow}Terminal Tips${c.reset}`,
-    `  ${c.dim}$${c.reset} curl https://lanlance.cn/posts/hertz-csrf/`,
-    `  ${c.dim}$${c.reset} curl -H "Accept: text/markdown" https://lanlance.cn/posts/hertz-csrf/`,
+    `  ${c.dim}$${c.reset} curl ${tipUrl}`,
+    `  ${c.dim}$${c.reset} curl -H "Accept: text/markdown" ${tipUrl}`,
     ""
   );
   return lines.join("\n");

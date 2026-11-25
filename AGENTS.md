@@ -36,4 +36,10 @@ CSS 已内联进 `themes/no-style-please/templates/base.html` 的 `<style>` 块�
 ## 发布
 
 - commit 后 push main，CF Pages 自动构建。
+- push 后等 CF Pages 构建完成，刷新 Cloudflare 边缘缓存（HTML 边缘缓存 15 分钟，清缓存可立刻生效）：
+
+```sh
+(cd /tmp && cf cache purge -z lanlance.cn --body '{"purge_everything":true}')
+```
+
 - 静态资源缓存与安全响应头规则在 `static/_headers`。
