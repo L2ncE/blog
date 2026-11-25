@@ -23,7 +23,7 @@ taxonomies:
 
 但这套流程代价也很大。Superpowers 是个非常重量级的框架，一个流程跑下来注入的上下文非常庞大，经常一天烧掉几亿 token，但效果还比不上现在 matt skills 的几句话。从现在的视角看原因很明显，模型能力强了之后原来那些为了让模型跑得更稳而加的护栏，都成了注意力里的噪音。
 
-<img src="/images/posts/picgoartificial-analysis-intelligence-index-30-aug-26-604cfa85.webp" width="1728" height="703" loading="lazy" decoding="async" alt="Artificial Analysis 模型能力指数趋势图">
+<picture><source srcset="/images/posts/picgoartificial-analysis-intelligence-index-30-aug-26-604cfa85.avif" type="image/avif"><img src="/images/posts/picgoartificial-analysis-intelligence-index-30-aug-26-604cfa85.webp" width="1728" height="703" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRkwAAABXRUJQVlA4IEAAAADQAQCdASoQAAcABABoJYwCw7ENV7KEAAD+8EpTH2aXEOep/WWPp7zelZlneg4+rMSi3MFgCoh5kzjCG9EA4AAA) center/cover" alt="Artificial Analysis 模型能力指数趋势图"></picture>
 
 八月初那篇讲了 Harness 换成 Pi 的原因。Databricks 拿几百万行的代码库实测过，同一个模型换不同 Harness，质量基本持平的情况下任务成本能差出两倍以上，Pi 每轮喂给模型的上下文只有其他 Harness 的三分之一左右。
 
@@ -47,11 +47,11 @@ Anthropic 最近发了一篇博客讲上下文工程的新规则，里面明确�
 
 三是 subagent 加 worktree。并发跑多个任务时用 git worktree 做隔离，各改各的避免冲突，worktree 是 git 的通用概念，哪个 Harness 都能用；在 Claude Code 和 Codex 里 subagent 是原生的。而 Pi 秉持 Less is More 的思路，原生并不提供 subagent，原因是作者认为使用 tmux 等原语即可实现 subagent 的并行、避免上下文腐化等功能。我日常使用 [Herdr](https://herdr.dev/)，可以理解为 AI 时代的 tmux，比 subagent 更轻，还能让 Pi 直接操纵里面的 Claude Code、Codex 这些进程。
 
-<img src="/images/posts/picgopasted-image-20260831150427-5cfbd3ee.webp" width="1728" height="903" loading="lazy" decoding="async" alt="Herdr 与多 Coding Agent 并发工作流界面">
+<picture><source srcset="/images/posts/picgopasted-image-20260831150427-5cfbd3ee.avif" type="image/avif"><img src="/images/posts/picgopasted-image-20260831150427-5cfbd3ee.webp" width="1728" height="903" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAACwAQCdASoQAAgABABoJaQAAudprdEAAP7sVL/7Bq11VH74AAA=) center/cover" alt="Herdr 与多 Coding Agent 并发工作流界面"></picture>
 
 ## 三、日常 Coding SOP
 
-<img src="/images/posts/picgopasted-image-20260902212541-6b4adf12.webp" width="1728" height="573" loading="lazy" decoding="async" alt="日常 AI Coding SOP 流程图">
+<picture><source srcset="/images/posts/picgopasted-image-20260902212541-6b4adf12.avif" type="image/avif"><img src="/images/posts/picgopasted-image-20260902212541-6b4adf12.webp" width="1728" height="573" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRigAAABXRUJQVlA4IBwAAAAwAQCdASoQAAUABABoJaQAA3AA/vF2gTVTgAAA) center/cover" alt="日常 AI Coding SOP 流程图"></picture>
 
 先用 grill-me / grill-with-docs 对齐上下文。这个阶段和 AI 一轮一轮脑暴对齐需求的边界、约束等。对齐后用 to-spec 产出 spec 文档，人工 Review 一遍，这是第一道人工门控。spec 过了用 to-tickets 垂直切片拆分任务，每个 ticket 可独立交付执行。接着派 subagent 跑 implement，一个 ticket 一个 subagent，worktree 隔离并发执行，执行内部走 tdd + code-review。全部完成后做 PR 级的 review，最后人工 CR 把关。
 
@@ -63,7 +63,7 @@ Anthropic 前阵子发了一篇 [AI-native SDLC 的 playbook](https://claude.com
 
 我的体验是，当前软件开发的并发上限卡在人的 Review 带宽上。
 
-<img src="/images/posts/picgopasted-image-20260902212614-5cb71212.webp" width="1728" height="545" loading="lazy" decoding="async" alt="并发开发与人工 Review 带宽瓶颈示意图">
+<picture><source srcset="/images/posts/picgopasted-image-20260902212614-5cb71212.avif" type="image/avif"><img src="/images/posts/picgopasted-image-20260902212614-5cb71212.webp" width="1728" height="545" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRiYAAABXRUJQVlA4IBoAAAAwAQCdASoQAAUABABoJaQAA3AA/vKSvkwAAA==) center/cover" alt="并发开发与人工 Review 带宽瓶颈示意图"></picture>
 
 Claude Code、Codex 随便开，worktree 随便建，这些层面的并发几乎免费，但一个人同时处理四个 Session 就比较勉强了，如果处理八条一定会有遗漏。所以未来 Harness 的竞争点，我认为会往压缩人工 Review 成本的方向走。
 

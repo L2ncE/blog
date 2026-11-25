@@ -33,8 +33,16 @@ CSS 已内联进 `themes/no-style-please/templates/base.html` 的 `<style>` 块�
 - 只修 bug，不做结构性重构。
 - 已有修过的坑，别改回去：emoji 渲染宏按 RI 对整体包 span（Safari 国旗）、nav 链接用 `&nbsp;` 分隔（minify_html 会折叠元素间空白）、`generate_feeds` 是 feed 判断键（`generate_feed` 已废弃）。
 
+## 图片规范
+
+- 禁止直接热链外部图床，所有正文配图统一托管在 `static/images/posts/`。
+- 新增或更新配图后运行 `node scripts/optimize-images.mjs`：脚本会将图片转换为 1152px 档 AVIF + WebP 回退，并生成 16px LQIP 模糊占位 Base64，输出 `<picture>` 标签（含 `width`、`height`、`loading="lazy"`、`decoding="async"` 与内联模糊背景）。
+- 每张图片必须填写有意义的中文 `alt` 描述；`<picture>` 块后必须保留空行，避免吞并后续 Markdown。
+- 连续多张同类配图（如游记/年终总结摄影）可用 `<div class="img-gallery">...</div>` 包裹为双列画廊（`</div>` 后留空行）。
+
 ## 发布
 
+- 新增文章后运行 `python3 scripts/generate-og.py`，为 `static/images/og/<slug>.png` 生成黑白印刷风 OG 分享卡片。
 - commit 后 push main，CF Pages 自动构建。
 - push 后等 CF Pages 构建完成，刷新 Cloudflare 边缘缓存（HTML 边缘缓存 15 分钟，清缓存可立刻生效）：
 

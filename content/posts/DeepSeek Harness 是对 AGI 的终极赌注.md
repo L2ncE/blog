@@ -39,7 +39,7 @@ dsh 选运行时组合是有代价的，每个组件都得自己实现逆操作�
 
 ## 目标自进化
 
-<img src="/images/posts/picgo034dc51e-423f-48b5-ab96-82e1870b9df1-c7a8249c.webp" width="1272" height="324" loading="lazy" decoding="async" alt="DeepSeek Harness 目标自进化架构示意图">
+<img src="/images/posts/picgo034dc51e-423f-48b5-ab96-82e1870b9df1-c7a8249c.webp" width="1272" height="324" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRjAAAABXRUJQVlA4ICQAAAAwAQCdASoQAAQABABoJaQAA3AA/vDUdufqyuuU2zicR7YAAAA=) center/cover" alt="DeepSeek Harness 目标自进化架构示意图">
 
 从论文最后可以看到 dsh 的最终愿景是实现 harness 的自进化，在 Lilian Weng 七月的文章中也是这个思路，只不过是将 harness 本身当优化目标，让模型自动修改 harness 代码并通过评测保留更优版本，ADAS、AFlow、STOP、Self-Harness、AHE、Meta-Harness 等都属于这个方向，但具体机制各不相同。
 

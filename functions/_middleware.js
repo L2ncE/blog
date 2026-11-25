@@ -1,4 +1,4 @@
-const ASSET_EXT_RE = /\.(png|jpe?g|webp|gif|svg|ico|xml|txt|json|css|js|woff2?|map)$/i;
+const ASSET_EXT_RE = /\.(png|jpe?g|webp|avif|gif|svg|ico|xml|xsl|txt|json|css|js|woff2?|map)$/i;
 const CLI_UA_RE = /^(curl|wget|httpie|fetch|xh)\b/i;
 
 function decodeEntities(str) {
@@ -70,9 +70,31 @@ function renderTerminalCard(entries) {
     "",
     `${c.bold}${c.yellow}Terminal Tips${c.reset}`,
     `  ${c.dim}$${c.reset} curl ${tipUrl}`,
+    `  ${c.dim}$${c.reset} curl -L https://lanlance.cn/random`,
+    `  ${c.dim}$${c.reset} curl https://lanlance.cn/posts/`,
     `  ${c.dim}$${c.reset} curl -H "Accept: text/markdown" ${tipUrl}`,
     ""
   );
+  return lines.join("\n");
+}
+
+function renderTerminalArchive(entries) {
+  const c = {
+    reset: "\x1b[0m",
+    bold: "\x1b[1m",
+    dim: "\x1b[2m",
+    yellow: "\x1b[33m",
+    blue: "\x1b[34m",
+  };
+  const lines = [
+    `${c.bold}${c.yellow}LanLance's Blog - Recent Posts (${entries.length})${c.reset}`,
+    `${c.dim}${"-".repeat(64)}${c.reset}`,
+  ];
+  for (const e of entries) {
+    lines.push(`  ${c.dim}${e.date}${c.reset}  ${c.bold}${e.title}${c.reset}`);
+    lines.push(`              ${c.blue}${e.href}${c.reset}`);
+  }
+  lines.push("");
   return lines.join("\n");
 }
 
@@ -80,6 +102,8 @@ function inlineHtmlToMarkdown(html) {
   return decodeEntities(
     html
       .replace(/<a\b[^>]*class=["']?zola-anchor["']?[^>]*>[\s\S]*?<\/a>/gi, "")
+      .replace(/<source\b[^>]*>/gi, "")
+      .replace(/<\/?picture\b[^>]*>/gi, "")
       .replace(/<img\b([^>]*)>/gi, (_, attrs) => {
         const srcM = attrs.match(/\bsrc=["']?([^"'\s>]+)/i);
         const altM = attrs.match(/\balt=["']([^"']*)["']/i);
@@ -147,6 +171,15 @@ function htmlToMarkdown(html, pageUrl) {
   });
 
   body = body
+    .replace(/<source\b[^>]*>/gi, "")
+    .replace(/<\/?picture\b[^>]*>/gi, "")
+    .replace(/<img\b([^>]*)>/gi, (_, attrs) => {
+      const srcM = attrs.match(/\bsrc=["']?([^"'\s>]+)/i);
+      const altM = attrs.match(/\balt=["']([^"']*)["']/i);
+      const src = srcM ? srcM[1] : "";
+      const alt = altM ? altM[1] : "";
+      return src ? `\n\n![${alt}](${src})\n\n` : "";
+    })
     .replace(/<h([1-6])\b[^>]*>([\s\S]*?)<\/h\1>/gi, (_, lvl, inner) => {
       const txt = inlineHtmlToMarkdown(inner).replace(/\s+/g, " ").trim();
       return txt ? `\n\n${"#".repeat(Number(lvl))} ${txt}\n\n` : "";
@@ -186,8 +219,25 @@ export async function onRequest(context) {
   }
 
   const url = new URL(request.url);
-  if (url.pathname.startsWith("/cdn-cgi/") || ASSET_EXT_RE.test(url.pathname)) {
+  if (url.pathname.startsWith("/cdn-cgi/") || url.pathname.startsWith("/api/") || ASSET_EXT_RE.test(url.pathname)) {
     return context.next();
+  }
+
+  if (url.pathname === "/random" || url.pathname === "/random/") {
+    try {
+      const atomRes = await context.env.ASSETS.fetch(new URL("/atom.xml", url));
+      const entries = atomRes.ok ? parseAtomEntries(await atomRes.text(), 20) : [];
+      const target = entries.length ? entries[Math.floor(Math.random() * entries.length)].href : "https://lanlance.cn/posts/";
+      return new Response(null, {
+        status: 302,
+        headers: {
+          "Location": target,
+          "Cache-Control": "private, no-store",
+        },
+      });
+    } catch {
+      return Response.redirect("https://lanlance.cn/posts/", 302);
+    }
   }
 
   const ua = request.headers.get("user-agent") || "";
@@ -205,6 +255,20 @@ export async function onRequest(context) {
       const entries = atomRes.ok ? parseAtomEntries(await atomRes.text(), 8) : [];
       const card = renderTerminalCard(entries);
       return new Response(request.method === "HEAD" ? null : card, {
+        status: 200,
+        headers: {
+          "Content-Type": "text/plain; charset=utf-8",
+          "Vary": "User-Agent, Accept",
+          "Cache-Control": "public, max-age=300",
+        },
+      });
+    }
+
+    if (isCli && !wantsMarkdown && (url.pathname === "/posts" || url.pathname === "/posts/")) {
+      const atomRes = await context.env.ASSETS.fetch(new URL("/atom.xml", url));
+      const entries = atomRes.ok ? parseAtomEntries(await atomRes.text(), 20) : [];
+      const archive = renderTerminalArchive(entries);
+      return new Response(request.method === "HEAD" ? null : archive, {
         status: 200,
         headers: {
           "Content-Type": "text/plain; charset=utf-8",

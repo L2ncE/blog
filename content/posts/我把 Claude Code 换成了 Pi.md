@@ -13,13 +13,13 @@ Databricks 拿自己几百万行的代码库实测了一批 Coding Agent，在�
 
 换完之后我就一直高强度用 Pi 到现在，中途一次都没用回 Claude Code。
 
-<img src="/images/posts/picgopasted-image-20260811175848-e6159878.webp" width="1728" height="1211" loading="lazy" decoding="async" alt="Pi 终端界面与使用截图">
+<picture><source srcset="/images/posts/picgopasted-image-20260811175848-e6159878.avif" type="image/avif"><img src="/images/posts/picgopasted-image-20260811175848-e6159878.webp" width="1728" height="1211" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRkYAAABXRUJQVlA4IDoAAADwAQCdASoQAAsABABoJZAAAuR6fL34SAAA/sKQpP+j62c1c7UjoqOdXkkpe0ZwE6lF73Vd6++BXgAA) center/cover" alt="Pi 终端界面与使用截图"></picture>
 
 ## 为什么是 Pi
 
 ### 同样的模型，少得多的成本
 
-<img src="/images/posts/picgoeadcbced-6040-4bbc-a718-62f559a92f20-51d4dbc7.webp" width="1728" height="1127" loading="lazy" decoding="async" alt="Databricks 不同 Coding Agent Harness 成本与得分对比图">
+<picture><source srcset="/images/posts/picgoeadcbced-6040-4bbc-a718-62f559a92f20-51d4dbc7.avif" type="image/avif"><img src="/images/posts/picgoeadcbced-6040-4bbc-a718-62f559a92f20-51d4dbc7.webp" width="1728" height="1127" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAAAwAQCdASoQAAoABABoJZwAA3AA/vIU8YKL2YPgAAA=) center/cover" alt="Databricks 不同 Coding Agent Harness 成本与得分对比图"></picture>
 
 Databricks 原文里有两句话我很认同。
 
@@ -72,7 +72,7 @@ curl -fsSL https://pi.dev/install.sh | sh
 
 - 使用不同厂商的模型交叉 Review 代码：主 Agent 用一个模型干活，Review 时的 subagent 换成别家模型，Ensemble review 能有效避免单一模型的系统性盲区。
 
-<img src="/images/posts/picgopasted-image-20260804212025-c3a57324.webp" width="1728" height="636" loading="lazy" decoding="async" alt="多模型交叉 Ensemble Review 示意图">
+<picture><source srcset="/images/posts/picgopasted-image-20260804212025-c3a57324.avif" type="image/avif"><img src="/images/posts/picgopasted-image-20260804212025-c3a57324.webp" width="1728" height="636" loading="lazy" decoding="async" style="background:url(data:image/webp;base64,UklGRioAAABXRUJQVlA4IB4AAABQAQCdASoQAAYABUBoJZwABAAAAP7vXbiwYeQAAAA=) center/cover" alt="多模型交叉 Ensemble Review 示意图"></picture>
 
 ## 我的判断
 
