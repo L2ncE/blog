@@ -11,10 +11,9 @@
 
     &.invertable { filter: invert(0); }
   }
-  .emoji, .f1-lights, .rose-sticker, .f1-track-lap, .igor-sticker, .coffee-ring {
+  .emoji, .f1-lights, .rose-sticker, .f1-track-lap, .album-sticker {
     filter: invert(1);
   }
-  .coffee-ring { opacity: 0.22; }
 }
 
 @media (prefers-color-scheme: dark) {
@@ -465,8 +464,9 @@ header nav {
   .fact-f1:hover .f1-car,
   .fact-travel:hover .fact-earth,
   .rose-sticker:hover,
-  .igor-sticker:hover,
-  .igor-sticker:hover .igor-vinyl,
+  .album-sticker:hover,
+  .album-sticker:hover .album-vinyl,
+  .fact-f1:hover .f1-track-lap,
   .f1-doodle:hover .f1-track-lap {
     animation: none;
     transition: none;
@@ -512,11 +512,15 @@ header nav {
   z-index: 1;
 }
 
+.fact-f1 {
+  position: relative;
+}
+
 .f1-doodle {
-  display: flex;
-  justify-content: flex-end;
-  margin-top: 0.35rem;
-  padding-right: 0.4rem;
+  position: absolute;
+  right: 0.25rem;
+  top: -0.95rem;
+  display: block;
   cursor: default;
   svg {
     display: block;
@@ -547,6 +551,7 @@ header nav {
   transition: opacity 0.2s ease;
 }
 
+.fact-f1:hover .f1-track-lap,
 .f1-doodle:hover .f1-track-lap {
   opacity: 1;
   stroke-dasharray: 1.6 98.4;
@@ -567,45 +572,58 @@ header nav {
   pointer-events: none;
 }
 
-.coffee-ring {
-  width: 92px;
-  height: 92px;
-  opacity: 0.13;
-  transform: rotate(-14deg);
-  user-select: none;
-}
-
-.igor-sticker {
+.album-sticker {
   position: relative;
   width: 78px;
   height: 68px;
-  margin-right: 0.4rem;
-  transform: rotate(-5deg);
   transition: transform 0.25s ease;
   pointer-events: auto;
   cursor: default;
-  &:hover {
-    transform: rotate(-2deg) translateY(-2px);
-    .igor-vinyl {
-      transform: translateX(8px) rotate(45deg);
-    }
+  &:hover .album-vinyl {
+    transform: translateX(8px) rotate(45deg);
   }
 }
 
-.igor-vinyl {
+.album-sticker--mbdtf {
+  margin-left: 0.4rem;
+  transform: rotate(4deg);
+  &:hover {
+    transform: rotate(1deg) translateY(-2px);
+  }
+  .album-tape {
+    transform: rotate(6deg);
+  }
+}
+
+.album-sticker--igor {
+  margin-right: 0.4rem;
+  transform: rotate(-5deg);
+  &:hover {
+    transform: rotate(-2deg) translateY(-2px);
+  }
+  .album-tape {
+    transform: rotate(-7deg);
+  }
+}
+
+.album-vinyl {
   position: absolute;
   top: 4px;
   right: 2px;
   width: 58px;
   height: 58px;
   border-radius: 50%;
-  background: radial-gradient(circle at center, #f4b4c6 0 18%, #1a1a1a 19% 21%, #262626 22% 38%, #161616 39% 41%, #242424 42% 62%, #151515 63% 65%, #1f1f1f 66% 100%);
+  background: radial-gradient(circle at center, #d51d2b 0 18%, #1a1a1a 19% 21%, #262626 22% 38%, #161616 39% 41%, #242424 42% 62%, #151515 63% 65%, #1f1f1f 66% 100%);
   box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.22);
   transition: transform 0.3s ease;
   z-index: 0;
 }
 
-.igor-sleeve {
+.album-vinyl--igor {
+  background: radial-gradient(circle at center, #f4b4c6 0 18%, #1a1a1a 19% 21%, #262626 22% 38%, #161616 39% 41%, #242424 42% 62%, #151515 63% 65%, #1f1f1f 66% 100%);
+}
+
+.album-sleeve {
   position: relative;
   z-index: 1;
   width: 64px;
@@ -623,7 +641,7 @@ header nav {
   }
 }
 
-.igor-tape {
+.album-tape {
   position: absolute;
   top: -6px;
   left: 16px;
@@ -633,7 +651,6 @@ header nav {
   border-left: 1px dashed rgba(0, 0, 0, 0.12);
   border-right: 1px dashed rgba(0, 0, 0, 0.12);
   box-shadow: 0 1px 1px rgba(0, 0, 0, 0.08);
-  transform: rotate(-7deg);
   z-index: 2;
   pointer-events: none;
 }
@@ -676,11 +693,17 @@ header nav {
     width: 25px;
     height: 8px;
   }
-  .coffee-ring {
-    width: 74px;
-    height: 74px;
+  .f1-doodle {
+    position: static;
+    display: block;
+    margin: 0.2rem 0 0.1rem 1.4rem;
+    svg { width: 88px; height: 66px; }
   }
-  .igor-sticker {
+  .album-sticker--mbdtf {
+    transform: rotate(3deg) scale(0.9);
+    transform-origin: bottom left;
+  }
+  .album-sticker--igor {
     transform: rotate(-4deg) scale(0.9);
     transform-origin: bottom right;
   }
