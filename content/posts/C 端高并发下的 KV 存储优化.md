@@ -7,8 +7,6 @@ aliases: ["/posts/c-duan-gao-bing-fa-xia-de-kv-cun-chu-you-hua/"]
 taxonomies:
   categories: ["Java", "性能优化"]
   tags: ["Java", "高并发", "缓存", "性能优化"]
-extra:
-  katex_css: true
 ---
 
 C 端场景下分布式 KV 存储（如 Redis、Tair）随着业务逻辑的日益复杂、对象体积不断膨胀，大 Value 问题成为系统顽疾之一，危害系统稳定性与接口性能。
@@ -61,6 +59,7 @@ Zstd 在压缩率上完胜 LZ4，在解压速度上完胜 Gzip，达到了 Paret
 **整体流程**
 
 <img src="/images/posts/picgofory-1-0bea9ec3.webp" width="1040" height="790" loading="lazy" decoding="async" alt="">
+
 **Fory 实例复用**
 
 创建 Fory 成本很高，始终复用实例，严禁在每次请求中通过 `new Fory()` 创建实例，应使用 `ThreadSafeFory` 或者 `ThreadLocal` 来复用实例。同时按 ID 注册类会有更好的性能和更小的空间开销。
@@ -110,5 +109,19 @@ public static byte[] serializeAndCompress(Object object) {
 
 性能提升计算：
 
-<span class="katex-display"><span class="katex"><span class="katex-mathml"><math xmlns="http://www.w3.org/1998/Math/MathML" display="block"><semantics><mrow><mtext>性能提升</mtext><mo>=</mo><mfrac><mrow><mn>59.4</mn><mo>−</mo><mn>1.6</mn></mrow><mn>59.4</mn></mfrac><mo>×</mo><mn>100</mn></mrow><annotation encoding="application/x-tex">	ext{性能提升} = rac{59.4 - 1.6}{59.4} 	imes 100% pprox 97.3%</annotation></semantics></math></span><span class="katex-html" aria-hidden="true"><span class="base"><span class="strut" style="height: 0.6833em;"></span><span class="mord text"><span class="mord cjk_fallback">性能提升</span></span><span class="mspace" style="margin-right: 0.2778em;"></span><span class="mrel">=</span><span class="mspace" style="margin-right: 0.2778em;"></span></span><span class="base"><span class="strut" style="height: 2.0074em; vertical-align: -0.686em;"></span><span class="mord"><span class="mopen nulldelimiter"></span><span class="mfrac"><span class="vlist-t vlist-t2"><span class="vlist-r"><span class="vlist" style="height: 1.3214em;"><span class="" style="top: -2.314em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">59.4</span></span></span><span class="" style="top: -3.23em;"><span class="pstrut" style="height: 3em;"></span><span class="frac-line" style="border-bottom-width: 0.04em;"></span></span><span class="" style="top: -3.677em;"><span class="pstrut" style="height: 3em;"></span><span class="mord"><span class="mord">59.4</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">−</span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mord">1.6</span></span></span></span><span class="vlist-s">​</span></span><span class="vlist-r"><span class="vlist" style="height: 0.686em;"><span class=""></span></span></span></span></span><span class="mclose nulldelimiter"></span></span><span class="mspace" style="margin-right: 0.2222em;"></span><span class="mbin">×</span><span class="mspace" style="margin-right: 0.2222em;"></span></span><span class="base"><span class="strut" style="height: 0.6444em;"></span><span class="mord">100</span></span></span></span></span>
+<math display="block" xmlns="http://www.w3.org/1998/Math/MathML">
+  <mrow>
+    <mtext>性能提升</mtext>
+    <mo>=</mo>
+    <mfrac>
+      <mrow><mn>59.4</mn><mo>−</mo><mn>1.6</mn></mrow>
+      <mn>59.4</mn>
+    </mfrac>
+    <mo>×</mo>
+    <mn>100</mn><mo>%</mo>
+    <mo>≈</mo>
+    <mn>97.3</mn><mo>%</mo>
+  </mrow>
+</math>
+
 即通过 Fory + Zstd 缓存方案，接口响应时间降低了约 **97%**。

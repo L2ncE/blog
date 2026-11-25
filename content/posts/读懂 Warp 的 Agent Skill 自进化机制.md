@@ -17,7 +17,7 @@ taxonomies:
 
 ## 双 Skill 循环自进化
 
-![](https://cdn.prod.website-files.com/68a44d4040f98a4adf2207b6/6a8f1a9a1b33f40618a9d59a_selfimprove-loop.jpg)
+<img src="/images/posts/6a8f1a9a1b33f40618a9d59a-selfimprove-loop-94158cb3.webp" width="1728" height="1212" loading="lazy" decoding="async" alt="">
 
 Warp 把这套系统拆成两个 Skill，由人类提供反馈进行运转。
 

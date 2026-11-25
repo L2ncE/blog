@@ -17,6 +17,7 @@
 }
 
 @media (prefers-color-scheme: dark) {
+  html { background: #000; }
   body { @include dark-appearance; }
 }
 // -------------------------------------------- //
@@ -33,9 +34,9 @@ html { height: 100%; }
 
 body {
   color: black;
-  font-family: "Times New Roman", "SimSun", serif;
+  font-family: "Times New Roman", "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
   font-size: 16px;
-  line-height: 1.4;
+  line-height: 1.75;
   margin: 0;
   min-height: 100%;
   overflow-wrap: break-word;
@@ -44,7 +45,9 @@ body {
 
 .post-meta { text-align: right; }
 
-h2, h3, h4, h5, h6 { margin-top: 3rem; }
+h2 { margin-top: 2.5rem; }
+
+h3, h4, h5, h6 { margin-top: 1.75rem; }
 
 hr { margin: 2rem 0; }
 
@@ -82,12 +85,19 @@ table, th, td {
 code {
   color: white;
   background: black;
+  padding: 0.1em 0.35em;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 0.9em;
 }
 
 pre code {
   display: block;
   overflow-x: auto;
   padding: 1rem;
+  color: #24292e;
+  background: #f6f8fa;
+  border: 1px solid #d0d7de;
+  line-height: 1.5;
 }
 
 blockquote {
@@ -124,4 +134,9 @@ nav, .taxonomies { text-align: center; }
   flex-direction: column;
   align-items: center;
   gap: 1rem;
+}
+
+@media (max-width: 640px) {
+  .w { padding: 2rem 1.25rem; }
+  table { display: block; overflow-x: auto; }
 }

@@ -2,8 +2,6 @@
 <html lang="{{ lang }}">
     <head>
         <meta charset="UTF-8">
-        <meta content="IE=edge" http-equiv="X-UA-Compatible"/>
-        <meta content="text/html; charset=UTF-8" http-equiv="content-type"/>
         <meta content="width=device-width, initial-scale=1" name="viewport"/>
 
         {% if page.title -%}
@@ -20,6 +18,8 @@
         {% set author = section.extra.author -%}
         {% elif config.extra.author -%}
         {% set author = config.extra.author -%}
+        {% elif config.author -%}
+        {% set author = config.author -%}
         {% endif -%}
 
         {% if page.description -%}
@@ -30,10 +30,13 @@
         {% set description = config.description | truncate(length=150) -%}
         {% endif -%}
 
+        {% set has_custom_image = false -%}
         {% if page.extra.image -%}
         {% set image = get_url(path=page.extra.image, trailing_slash=false) -%}
+        {% set has_custom_image = true -%}
         {% elif section.extra.image -%}
         {% set image = get_url(path=section.extra.image, trailing_slash=false) -%}
+        {% set has_custom_image = true -%}
         {% elif config.extra.logo -%}
         {% set image = get_url(path=config.extra.logo, trailing_slash=false) -%}
         {% endif -%}
@@ -53,7 +56,7 @@
         {% if description %}<meta name="description" content="{{ description }}">{% endif %}
         <meta name="generator" content="Zola v0.22.1">
 
-        <meta property="og:type" content="website">
+        <meta property="og:type" content="{% if page.date %}article{% else %}website{% endif %}">
         <meta property="og:url" content="{{ url | safe }}">
         {% if title %}<meta property="og:site_name" content="{{ config.title }}">{% endif %}
         {% if title %}<meta property="og:title" content="{{ title }}">{% endif %}
@@ -62,25 +65,25 @@
         
         {% set twitter_card = config.extra.twitter_card | default(value=true) -%}
         {% if twitter_card != false -%}
-        <meta property="twitter:card" content="summary_large_image">
-        <meta property="twitter:url" content="{{ url | safe }}">
-        {% if title %}<meta property="twitter:title" content="{{ title }}">{% endif %}
-        {% if description %}<meta property="twitter:description" content="{{ description }}">{% endif %}
-        {% if image %}<meta property="twitter:image" content="{{ image }}">{% endif %}
+        <meta name="twitter:card" content="{% if has_custom_image %}summary_large_image{% else %}summary{% endif %}">
+        <meta name="twitter:url" content="{{ url | safe }}">
+        {% if title %}<meta name="twitter:title" content="{{ title }}">{% endif %}
+        {% if description %}<meta name="twitter:description" content="{{ description }}">{% endif %}
+        {% if image %}<meta name="twitter:image" content="{{ image }}">{% endif %}
         {% endif -%}
         
         <link rel="canonical" href="{{ url | safe }}">
-        {% if image %}<link rel="shortcut icon" type="image/x-icon" href="{{ image }}">{% endif %}
+        {% if image %}<link rel="icon" type="image/png" href="{{ image }}">{% endif %}
         <script type="application/ld+json">
             {
-                {% if description %}"description":"{{ description | safe }}",{% endif %}
-                "url":"{{ url | safe }}",
-                "@type":"WebSite",
-                {% if title %}"headline":"{{ title | safe }}",{% endif %}
-                {% if title %}"name":"{{ title | safe }}",{% endif %}
+                {% if description %}"description":{{ description | json_encode() | safe }},{% endif %}
+                "url":{{ url | json_encode() | safe }},
+                {% if page.date -%}"@type":"BlogPosting","datePublished":{{ page.date | json_encode() | safe }},{% else -%}"@type":"WebSite",{% endif %}
+                {% if title %}"headline":{{ title | json_encode() | safe }},{% endif %}
+                {% if title %}"name":{{ title | json_encode() | safe }},{% endif %}
                 {% if author %}"author":{
                     "@type":"Person",
-                    "name":"{{ author | safe }}"
+                    "name":{{ author | json_encode() | safe }}
                 },{% endif %}
                 "@context":"https://schema.org"
             }
@@ -100,7 +103,7 @@
         {% block css -%}
         <style>
         {% raw -%}
-@media (prefers-color-scheme: dark){body{filter:invert(1)}body img{filter:invert(1)}body img.invertable{filter:invert(0)}body iframe{filter:invert(1)}body iframe.invertable{filter:invert(0)}body .emoji{filter:invert(1)}}html,body{background:#fff}html{height:100%}body{color:#000;font-family:"Times New Roman","SimSun",serif;font-size:16px;line-height:1.4;margin:0;min-height:100%;overflow-wrap:break-word;overflow-x:hidden}.post-meta{text-align:right}h2,h3,h4,h5,h6{margin-top:3rem}hr{margin:2rem 0}p{margin:1rem 0}li{margin:.4rem 0}*:target{background:#ff0}.w{max-width:640px;margin:0 auto;padding:4rem 2rem}hr{text-align:center;border:0}hr:before{content:"/////"}hr:after{content:attr(data-content) "/////"}table{width:100%;overflow-wrap:anywhere}table,th,td{border:thin solid #000;border-collapse:collapse;padding:.4rem}code{color:#fff;background:#000}pre code{display:block;overflow-x:auto;padding:1rem}blockquote{font-style:italic;border:thin solid #000;padding:1rem}blockquote p{margin:0}img{max-width:100%;height:auto;display:block;margin:0 auto}.footnote-definition{padding:0 1rem}.footnote-definition:target{background:#ff0;color:#212121}.footnote-definition p{display:inline}nav,.taxonomies{text-align:center}.footer-content{display:flex;flex-direction:column;align-items:center;gap:1rem}
+@media (prefers-color-scheme: dark){html{background:#000}body{filter:invert(1)}body img{filter:invert(1)}body img.invertable{filter:invert(0)}body iframe{filter:invert(1)}body iframe.invertable{filter:invert(0)}body .emoji{filter:invert(1)}}html,body{background:#fff}html{height:100%}body{color:#000;font-family:"Times New Roman","Songti SC","Noto Serif CJK SC","SimSun",serif;font-size:16px;line-height:1.75;margin:0;min-height:100%;overflow-wrap:break-word;overflow-x:hidden}.post-meta{text-align:right}h2{margin-top:2.5rem}h3,h4,h5,h6{margin-top:1.75rem}hr{margin:2rem 0}p{margin:1rem 0}li{margin:.4rem 0}*:target{background:#ff0}.w{max-width:640px;margin:0 auto;padding:4rem 2rem}hr{text-align:center;border:0}hr:before{content:"/////"}hr:after{content:attr(data-content) "/////"}table{width:100%;overflow-wrap:anywhere}table,th,td{border:thin solid #000;border-collapse:collapse;padding:.4rem}code{color:#fff;background:#000;padding:.1em .35em;font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,monospace;font-size:.9em}pre code{display:block;overflow-x:auto;padding:1rem;color:#24292e;background:#f6f8fa;border:1px solid #d0d7de;line-height:1.5}blockquote{font-style:italic;border:thin solid #000;padding:1rem}blockquote p{margin:0}img{max-width:100%;height:auto;display:block;margin:0 auto}.footnote-definition{padding:0 1rem}.footnote-definition:target{background:#ff0;color:#212121}.footnote-definition p{display:inline}nav,.taxonomies{text-align:center}.footer-content{display:flex;flex-direction:column;align-items:center;gap:1rem}@media (max-width: 640px){.w{padding:2rem 1.25rem}table{display:block;overflow-x:auto}}
         {%- endraw %}
         </style>
         {% endblock css -%}
@@ -115,7 +118,7 @@
                     {% if nav_item.url -%}
                     {% set href = nav_item.url -%}
                     {% elif nav_item.path -%}
-                    {% set href = get_url(path=nav_item.path, trailing_slash=false) | safe -%}
+                    {% set href = get_url(path=nav_item.path, trailing_slash=true) | safe -%}
                     {% endif -%}
                     <a href="{{ href }}" {% if nav_item.new_tab %}target="_blank" rel="noreferrer noopener"{% endif %}>{{ nav_item.name }}</a>{% if not loop.last %}&nbsp;{% endif %}
                     {% endfor -%}

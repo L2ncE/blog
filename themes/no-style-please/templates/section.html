@@ -1,4 +1,5 @@
 {% extends "base.html" %}
+{% import "macros.html" as macros -%}
 
 {% block header %}
 <p><a href="{{ section.path }}..">..</a>{{ section.path }}</p>
@@ -16,9 +17,9 @@
 <ul>
     {% for page in pages %}
     <li>
-        <a href="{{ page.permalink | safe }}">{{ page.date }} - {{ page.title }}</a>
+        <a href="{{ page.permalink | safe }}">{{ page.date }} - {{ macros::emoji_safe(txt=page.title) }}</a>
         <br />
-        {{ page.description }}
+        {{ macros::emoji_safe(txt=page.description) }}
     </li>
     {% endfor %}
 </ul>

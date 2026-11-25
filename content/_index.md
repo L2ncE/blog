@@ -1,5 +1,5 @@
 ---
-description: "LanLane's blog index page"
+description: "LanLance's blog index page"
 ---
 
 📸 我拍的照: [photo.lanlance.cn](https://photo.lanlance.cn/)

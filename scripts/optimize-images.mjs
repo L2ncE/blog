@@ -60,7 +60,7 @@ print(json.dumps({'src_w': w, 'src_h': h, 'w': rgb.size[0], 'h': rgb.size[1],
 
 mkdirSync(OUT_DIR, { recursive: true });
 const files = walk('content');
-const REMOTE = /^!\[[^\]]*\]\((https:\/\/raw\.githubusercontent\.com\/L2ncE\/images\/main\/.+)\)\s*$/gm;
+const REMOTE = /^!\[[^\]]*\]\((https?:\/\/[^\s)]+)\)[ \t]*$/gm;
 
 const urls = new Set();
 for (const f of files) for (const m of readFileSync(f, 'utf8').matchAll(REMOTE)) urls.add(m[1]);
@@ -88,7 +88,7 @@ for (const f of files) {
   let text = before;
   for (const r of results) {
     const escaped = r.url.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
-    text = text.replace(new RegExp(`^!\\[[^\\]]*\\]\\(${escaped}\\)\\s*$`, 'gm'),
+    text = text.replace(new RegExp(`^!\\[[^\\]]*\\]\\(${escaped}\\)[ \\t]*$`, 'gm'),
       `<img src="/images/posts/${r.name}.webp" width="${r.w}" height="${r.h}" loading="lazy" decoding="async" alt="">`);
   }
   if (text !== before) { writeFileSync(f, text); changed++; }
