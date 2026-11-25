@@ -28,9 +28,8 @@
 {% endblock header -%}
 
 {% block content -%}
-{% if page.toc and (page.toc | length >= 3 or page.extra.add_toc) -%}
-<details class="toc">
-<summary>ToC</summary>
+{% if page.toc and page.extra.add_toc -%}
+ToC
 <ul>
 {% for h1 in page.toc -%}
     <li>
@@ -47,7 +46,6 @@
     </li>
 {% endfor -%}
 </ul>
-</details>
 {% endif -%}
 {{ macros::emoji_safe(txt=page.content) }}
 {% endblock content -%}

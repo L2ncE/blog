@@ -121,8 +121,6 @@ function htmlToMarkdown(html, pageUrl) {
     return token;
   });
 
-  body = body.replace(/<details\b[^>]*class=["']?toc["']?[^>]*>[\s\S]*?<\/details>/gi, "");
-
   body = body.replace(/<math\b[^>]*>([\s\S]*?)<\/math>/gi, (_, inner) => {
     const txt = stripTags(inner).replace(/\s+/g, " ").trim();
     return txt ? `\n\n$$ ${txt} $$\n\n` : "";
