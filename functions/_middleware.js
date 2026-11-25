@@ -106,8 +106,10 @@ function htmlToMarkdown(html, pageUrl) {
   const title = titleM ? decodeEntities(titleM[1]).trim() : "";
   const dateM = html.match(/<time\b[^>]*datetime=["']?([^"'\s>]+)/i);
   const date = dateM ? dateM[1].trim() : "";
-  const mainM = html.match(/<main\b[^>]*>([\s\S]*?)<\/main>/i);
-  let body = mainM ? mainM[1] : html;
+  const mainM = html.match(/<main\b[^>]*>([\s\S]*?)(?:<\/main>|<footer\b|$)/i);
+  let body = (mainM ? mainM[1] : html)
+    .replace(/<head\b[\s\S]*?<\/head>/gi, "")
+    .replace(/<(script|style|header|footer|nav|dialog)\b[\s\S]*?<\/\1>/gi, "");
 
   const codeBlocks = [];
   body = body.replace(/<pre\b[^>]*>\s*<code\b([^>]*)>([\s\S]*?)<\/code>\s*<\/pre>/gi, (_, attrs, inner) => {
