@@ -11,7 +11,7 @@
 
     &.invertable { filter: invert(0); }
   }
-  .emoji {
+  .emoji, .f1-lights {
     filter: invert(1);
   }
 }
@@ -268,6 +268,14 @@ dialog.img-lightbox {
 
 nav, .taxonomies { text-align: center; }
 
+header nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  row-gap: 0.2rem;
+  a { white-space: nowrap; }
+}
+
 // Footer content
 .footer-content {
   display: flex;
@@ -308,16 +316,156 @@ nav, .taxonomies { text-align: center; }
   }
 }
 
-.home-links {
-  margin: 0.4rem 0 0;
-  color: #57606a;
-  font-size: 0.95em;
-}
-
 .home {
   h2 { margin: 1.6rem 0 0.5rem; }
   ul { margin: 0.4rem 0; }
   li { margin: 0.28rem 0; }
+}
+
+.eq {
+  display: inline-flex;
+  align-items: flex-end;
+  gap: 2px;
+  height: 0.85em;
+  margin-left: 0.45rem;
+  vertical-align: -0.05em;
+  i {
+    display: block;
+    width: 2px;
+    background: #8b949e;
+    border-radius: 1px;
+    transition: background 0.2s;
+    &:nth-child(1) { height: 35%; }
+    &:nth-child(2) { height: 70%; }
+    &:nth-child(3) { height: 45%; }
+    &:nth-child(4) { height: 85%; }
+  }
+}
+
+.fact-music:hover .eq i {
+  background: #000;
+  animation: eq-bar 0.7s ease-in-out infinite alternate;
+  &:nth-child(2) { animation-delay: 0.15s; }
+  &:nth-child(3) { animation-delay: 0.3s; }
+  &:nth-child(4) { animation-delay: 0.45s; }
+}
+
+@keyframes eq-bar {
+  0% { height: 20%; }
+  100% { height: 100%; }
+}
+
+.f1-car { display: inline-block; }
+
+.f1-lights {
+  display: inline-flex;
+  align-items: center;
+  gap: 3px;
+  margin-left: 0.5rem;
+  vertical-align: 0.05em;
+  i {
+    display: block;
+    width: 6px;
+    height: 6px;
+    border-radius: 50%;
+    border: 1px solid #8b949e;
+    background: transparent;
+  }
+}
+
+.fact-f1:hover .f1-lights i {
+  &:nth-child(1) { animation: f1-1 2.2s steps(1, end) forwards; }
+  &:nth-child(2) { animation: f1-2 2.2s steps(1, end) forwards; }
+  &:nth-child(3) { animation: f1-3 2.2s steps(1, end) forwards; }
+  &:nth-child(4) { animation: f1-4 2.2s steps(1, end) forwards; }
+  &:nth-child(5) { animation: f1-5 2.2s steps(1, end) forwards; }
+}
+
+.fact-f1:hover .f1-car {
+  animation: f1-launch 2.2s cubic-bezier(0.22, 1, 0.36, 1);
+}
+
+@keyframes f1-1 {
+  0% { background: #e10600; border-color: #e10600; }
+  62%, 100% { background: transparent; border-color: #8b949e; }
+}
+@keyframes f1-2 {
+  0%, 9% { background: transparent; border-color: #8b949e; }
+  10% { background: #e10600; border-color: #e10600; }
+  62%, 100% { background: transparent; border-color: #8b949e; }
+}
+@keyframes f1-3 {
+  0%, 19% { background: transparent; border-color: #8b949e; }
+  20% { background: #e10600; border-color: #e10600; }
+  62%, 100% { background: transparent; border-color: #8b949e; }
+}
+@keyframes f1-4 {
+  0%, 29% { background: transparent; border-color: #8b949e; }
+  30% { background: #e10600; border-color: #e10600; }
+  62%, 100% { background: transparent; border-color: #8b949e; }
+}
+@keyframes f1-5 {
+  0%, 39% { background: transparent; border-color: #8b949e; }
+  40% { background: #e10600; border-color: #e10600; }
+  62%, 100% { background: transparent; border-color: #8b949e; }
+}
+@keyframes f1-launch {
+  0%, 62% { transform: translateX(0); }
+  76% { transform: translateX(14px); }
+  100% { transform: translateX(0); }
+}
+
+.fact-earth {
+  display: inline-block;
+  transition: transform 0.6s ease;
+}
+
+.fact-travel:hover .fact-earth { transform: rotate(360deg); }
+
+.flags {
+  display: inline-flex;
+  gap: 0.15rem;
+  vertical-align: middle;
+}
+
+.flag {
+  position: relative;
+  display: inline-block;
+  cursor: default;
+  transition: transform 0.18s ease;
+  &:hover {
+    transform: translateY(-3px) scale(1.25);
+    z-index: 2;
+  }
+  &::after {
+    content: attr(data-tip);
+    position: absolute;
+    bottom: 130%;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #000;
+    color: #fff;
+    font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size: 0.7rem;
+    line-height: 1.2;
+    padding: 0.18rem 0.42rem;
+    white-space: nowrap;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.15s ease;
+  }
+  &:hover::after { opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .fact-music:hover .eq i,
+  .fact-f1:hover .f1-lights i,
+  .fact-f1:hover .f1-car,
+  .fact-travel:hover .fact-earth {
+    animation: none;
+    transition: none;
+    transform: none;
+  }
 }
 
 .home-cols {

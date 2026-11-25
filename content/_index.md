@@ -2,13 +2,13 @@
 description: "LanLance's blog index page"
 ---
 
-<p class="home-links">📸 <a href="https://photo.lanlance.cn/">photo.lanlance.cn</a> / 📚 <a href="https://gists.lanlance.cn/">gists.lanlance.cn</a></p>
-
 ## Facts
 
-- 🎵 看过 Ye（海口*2）、Tyler（首尔）、Ed Sheeran（杭州）、XG（成都）、The Weeknd（新加坡）
-- 🏎️ 去过两次 F1 上海大奖赛现场
-- 🌏 旅行过中国所有的省份 & 🇨🇳🇹🇭🇯🇵🇰🇷🇸🇬🇻🇳
+<ul class="facts-list">
+<li class="fact-music">🎵 看过 Ye（海口*2）、Tyler（首尔）、Ed Sheeran（杭州）、XG（成都）、The Weeknd（新加坡）<span class="eq" aria-hidden="true"><i></i><i></i><i></i><i></i></span></li>
+<li class="fact-f1"><span class="f1-car">🏎️</span> 去过两次 F1 上海大奖赛现场<span class="f1-lights" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span></li>
+<li class="fact-travel"><span class="fact-earth">🌏</span> 旅行过中国所有的省份 &amp; <span class="flags"><span class="flag" data-tip="China 34/34">🇨🇳</span><span class="flag" data-tip="Thailand">🇹🇭</span><span class="flag" data-tip="Japan">🇯🇵</span><span class="flag" data-tip="Korea">🇰🇷</span><span class="flag" data-tip="Singapore">🇸🇬</span><span class="flag" data-tip="Vietnam">🇻🇳</span></span></li>
+</ul>
 
 <div class="home-cols">
 <div>

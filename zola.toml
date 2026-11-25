@@ -35,6 +35,8 @@ header_nav = [
     { lang = "zh", name = "categories", path = "/categories" },
     { lang = "zh", name = "friends", path = "/friends" },
     { lang = "zh", name = "about", path = "/about" },
+    { lang = "zh", name = "photo", url = "https://photo.lanlance.cn/", new_tab = true },
+    { lang = "zh", name = "gists", url = "https://gists.lanlance.cn/", new_tab = true },
 ]
 footer_nav = [
     { name = "RSS", url = "/atom.xml" },
