@@ -63,9 +63,8 @@
 
 {% block footer -%}
 <div class="paper-desk" aria-hidden="true">
-    <div class="album-sticker album-sticker--mbdtf">
+    <div class="album-sticker album-sticker--mbdtf" data-lyric="Runaway fast as you can!!!!" data-tone="mbdtf">
         <span class="album-tape"></span>
-        <span class="album-vinyl album-vinyl--mbdtf"></span>
         <div class="album-sleeve">
             <picture>
                 <source srcset="/images/stickers/mbdtf.avif" type="image/avif">
@@ -73,9 +72,8 @@
             </picture>
         </div>
     </div>
-    <div class="album-sticker album-sticker--igor">
+    <div class="album-sticker album-sticker--igor" data-lyric="YOU MAKE MY EARFQUAKE!!!" data-tone="igor">
         <span class="album-tape"></span>
-        <span class="album-vinyl album-vinyl--igor"></span>
         <div class="album-sleeve">
             <picture>
                 <source srcset="/images/stickers/igor.avif" type="image/avif">
@@ -84,4 +82,58 @@
         </div>
     </div>
 </div>
+<script>
+(function(){
+  if (window.matchMedia && window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  document.querySelectorAll('.album-sticker[data-lyric]').forEach(function(el){
+    var text = el.getAttribute('data-lyric');
+    var tone = el.getAttribute('data-tone');
+    var timer = null;
+    var lastX = 0, lastY = 0, lastMove = 0;
+
+    function spawn(x, y) {
+      var s = document.createElement('span');
+      s.className = 'lyric-pop lyric-pop--' + tone;
+      s.textContent = text;
+      var dx = (Math.random() - 0.5) * 140;
+      var dy = -48 - Math.random() * 80;
+      var rot = (Math.random() - 0.5) * 28;
+      var size = 12 + Math.floor(Math.random() * 5);
+      s.style.left = (x + (Math.random() - 0.5) * 20) + 'px';
+      s.style.top = (y + (Math.random() - 0.5) * 16) + 'px';
+      s.style.fontSize = size + 'px';
+      s.style.setProperty('--dx', dx.toFixed(1) + 'px');
+      s.style.setProperty('--dy', dy.toFixed(1) + 'px');
+      s.style.setProperty('--rot', rot.toFixed(1) + 'deg');
+      document.body.appendChild(s);
+      setTimeout(function(){ s.remove(); }, 1100);
+    }
+
+    function updatePos(e) {
+      lastX = e.clientX;
+      lastY = e.clientY;
+    }
+
+    el.addEventListener('mouseenter', function(e){
+      updatePos(e);
+      for (var i = 0; i < 4; i++) spawn(lastX, lastY);
+      if (timer) clearInterval(timer);
+      timer = setInterval(function(){ spawn(lastX, lastY); }, 140);
+    });
+
+    el.addEventListener('mousemove', function(e){
+      updatePos(e);
+      var now = Date.now();
+      if (now - lastMove > 80) {
+        lastMove = now;
+        spawn(lastX, lastY);
+      }
+    });
+
+    el.addEventListener('mouseleave', function(){
+      if (timer) { clearInterval(timer); timer = null; }
+    });
+  });
+})();
+</script>
 {% endblock footer -%}

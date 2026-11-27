@@ -33,7 +33,7 @@ CSS 已内联进 `themes/no-style-please/templates/base.html` 的 `<style>` 块�
 所有前端样式、模板与交互改动遵循根目录 [`DESIGN.md`](DESIGN.md)。
 
 - 改动样式后必须同步遵守上方「样式同步」流程，并在真实浏览器中完成视觉验收。
-- 如项目已有显式保留的个性化内容（如首页装饰彩蛋），调整时以不破坏既有内容为前提。
+- 项目级覆写：正文与标题沿用学术衬线字体（`Times New Roman` / `Songti SC`），不采用 `DESIGN.md` 中的 Geist；首页站点名使用自托管 `Pinyon Script` 斜花体；保留首页个性化装饰彩蛋。
 
 ## 主题维护
 

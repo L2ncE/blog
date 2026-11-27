@@ -1,14 +1,5 @@
 // -------------- SELF-HOSTED FONTS -------------- //
 @font-face {
-  font-family: "Geist";
-  font-style: normal;
-  font-weight: 400 700;
-  font-display: swap;
-  src: url("/fonts/geist-latin.woff2") format("woff2");
-  unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
-}
-
-@font-face {
   font-family: "Pinyon Script";
   font-style: normal;
   font-weight: 400;
@@ -31,7 +22,7 @@
 
     &.invertable { filter: invert(0); }
   }
-  .emoji, .f1-lights, .rose-sticker, .f1-track-lap, .album-sticker {
+  .emoji, .f1-lights, .rose-sticker, .f1-track-lap, .album-sticker, .lyric-pop {
     filter: invert(1);
   }
 }
@@ -53,7 +44,7 @@ html { height: 100%; }
 
 body {
   color: #181818;
-  font-family: "Geist", -apple-system, BlinkMacSystemFont, "PingFang SC", "Hiragino Sans GB", "Noto Sans SC", sans-serif;
+  font-family: "Times New Roman", "Songti SC", "Noto Serif CJK SC", "SimSun", serif;
   font-size: 16px;
   font-weight: 400;
   line-height: 1.75;
@@ -607,8 +598,6 @@ footer {
   .fact-f1:hover .f1-car,
   .fact-travel:hover .fact-earth,
   .rose-sticker:hover,
-  .album-sticker:hover,
-  .album-sticker:hover .album-vinyl,
   .fact-f1:hover .f1-track-lap,
   .f1-doodle:hover .f1-track-lap {
     animation: none;
@@ -717,22 +706,15 @@ footer {
 
 .album-sticker {
   position: relative;
-  width: 78px;
-  height: 68px;
-  transition: transform 0.25s ease;
+  width: 64px;
+  height: 64px;
   pointer-events: auto;
   cursor: default;
-  &:hover .album-vinyl {
-    transform: translateX(8px) rotate(45deg);
-  }
 }
 
 .album-sticker--mbdtf {
   margin-left: 8px;
   transform: rotate(4deg);
-  &:hover {
-    transform: rotate(1deg) translateY(-2px);
-  }
   .album-tape {
     transform: rotate(6deg);
   }
@@ -741,29 +723,45 @@ footer {
 .album-sticker--igor {
   margin-right: 8px;
   transform: rotate(-5deg);
-  &:hover {
-    transform: rotate(-2deg) translateY(-2px);
-  }
   .album-tape {
     transform: rotate(-7deg);
   }
 }
 
-.album-vinyl {
-  position: absolute;
-  top: 4px;
-  right: 2px;
-  width: 58px;
-  height: 58px;
-  border-radius: 50%;
-  background: radial-gradient(circle at center, #d51d2b 0 18%, #1a1a1a 19% 21%, #262626 22% 38%, #161616 39% 41%, #242424 42% 62%, #151515 63% 65%, #1f1f1f 66% 100%);
-  box-shadow: 0 1.5px 4px rgba(0, 0, 0, 0.22);
-  transition: transform 0.3s ease;
-  z-index: 0;
+.lyric-pop {
+  position: fixed;
+  pointer-events: none;
+  user-select: none;
+  white-space: nowrap;
+  z-index: 9999;
+  font-family: "Times New Roman", Georgia, serif;
+  font-style: italic;
+  font-weight: 700;
+  line-height: 1;
+  transform: translate(-50%, -50%);
+  animation: lyric-burst 1.05s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
 
-.album-vinyl--igor {
-  background: radial-gradient(circle at center, #f4b4c6 0 18%, #1a1a1a 19% 21%, #262626 22% 38%, #161616 39% 41%, #242424 42% 62%, #151515 63% 65%, #1f1f1f 66% 100%);
+.lyric-pop--mbdtf {
+  color: #c8102e;
+}
+
+.lyric-pop--igor {
+  color: #e0528c;
+}
+
+@keyframes lyric-burst {
+  0% {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.75) rotate(0deg);
+  }
+  15% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translate(calc(-50% + var(--dx)), calc(-50% + var(--dy))) scale(1.08) rotate(var(--rot));
+  }
 }
 
 .album-sleeve {
