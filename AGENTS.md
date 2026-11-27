@@ -28,9 +28,16 @@ CSS 已内联进 `themes/no-style-please/templates/base.html` 的 `<style>` 块�
 
 改 sass 后依次：build → 把 `public/style.css` 的内容替换进 base.html 的 `<style>` 块 → 再 build 验证。只改 `zola.toml` 或 `content/` 无需同步。
 
+## 前端设计规范
+
+所有前端样式、模板与交互改动遵循根目录 [`DESIGN.md`](DESIGN.md)。
+
+- 改动样式后必须同步遵守上方「样式同步」流程，并在真实浏览器中完成视觉验收。
+- 如项目已有显式保留的个性化内容（如首页装饰彩蛋），调整时以不破坏既有内容为前提。
+
 ## 主题维护
 
-- 只修 bug，不做结构性重构。
+- 默认只修 bug，不做无授权的结构性重构；按 `DESIGN.md` 做样式调整时需先明确范围。
 - 已有修过的坑，别改回去：emoji 渲染宏按 RI 对整体包 span（Safari 国旗）、nav 链接用 `&nbsp;` 分隔（minify_html 会折叠元素间空白）、`generate_feeds` 是 feed 判断键（`generate_feed` 已废弃）。
 
 ## 图片规范
